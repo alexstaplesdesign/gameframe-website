@@ -1,6 +1,6 @@
-# GameFrame - Custom Sports Card Designs
+# GameFrame - Custom Sports Graphics Designs
 
-A professional website for GameFrame, offering custom sports card designs that turn your child's game day photos into professional-quality sports cards.
+A professional website for GameFrame, offering custom sports graphics designs that turn your child's game day photos into professional-quality sports graphics.
 
 ## Features
 
