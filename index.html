@@ -6,6 +6,14 @@
   <title>GameFrame – Custom Sports Card Designs</title>
   <meta name="description" content="GameFrame turns your child's game day photo into a pro style sports card." />
 
+  <!-- Preload critical images -->
+  <link rel="preload" as="image" href="media/heroimage.png" fetchpriority="high">
+  <link rel="preload" as="image" href="media/sample29.png">
+  <link rel="preload" as="image" href="media/sample28.png">
+  <link rel="preload" as="image" href="media/sample27.png">
+  <link rel="preload" as="image" href="media/sample26.png">
+  <link rel="preload" as="image" href="media/sample25.png">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -119,8 +127,8 @@
   <header class="bg-slate-900 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3">
-        <div class="h-10 w-10 rounded-lg bg-white/10 grid place-items-center text-brand-200 font-black">GF</div>
-        <span class="font-semibold tracking-tight">GameFrame</span>
+        <img src="media/gameframelogo.png" alt="GameFrame Logo" class="h-8 w-auto" loading="eager" fetchpriority="high">
+        <span class="font-bold text-xl tracking-tight bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">GameFrame</span>
       </a>
       <nav class="hidden sm:flex items-center gap-6 text-sm opacity-90">
         <a href="#samples" class="hover:opacity-100 relative group transition-all duration-300">
@@ -679,8 +687,8 @@
   <footer class="bg-slate-900 text-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <div class="flex items-center justify-center gap-3 mb-6">
-        <div class="h-10 w-10 rounded-lg bg-brand-500 grid place-items-center text-white font-black">GF</div>
-        <span class="font-semibold text-xl">GameFrame</span>
+        <img src="media/gameframelogo.png" alt="GameFrame Logo" class="h-8 w-auto">
+        <span class="font-bold text-xl tracking-tight">GameFrame</span>
       </div>
       <p class="text-slate-400 mb-4">Custom sports card designs that capture the magic of game day.</p>
       <div class="flex justify-center gap-6 text-sm">
@@ -717,6 +725,12 @@
     // Sample Images Management System
     // TO ADD NEW SAMPLES: Just add the filename to this array (newest first)
     const allSamples = [
+      'sample29.png',
+      'sample28.png',
+      'sample27.png',
+      'sample26.png',
+      'sample25.png',
+      'sample24.png',
       'sample23.png',
       'sample22.png',
       'sample21.png',
@@ -763,6 +777,9 @@
         img.src = `media/${filename}`;
         img.alt = `Sample ${index + 1}`;
         img.className = 'w-[calc(100vw-2rem)] max-w-sm sm:w-56 flex-shrink-0 snap-center object-contain transition-transform duration-500 sm:hover:scale-[1.03] hover:shadow-2xl hover:shadow-brand-500/30 rounded-2xl shadow border border-slate-200/60';
+        img.loading = index < 5 ? 'eager' : 'lazy';
+        img.decoding = 'async';
+        img.fetchPriority = index < 3 ? 'high' : 'low';
         
         wrapper.appendChild(img);
         container.appendChild(wrapper);
