@@ -284,6 +284,7 @@
     // Sample Images Management System
     // TO ADD NEW SAMPLES: Just add the filename to this array (newest first)
     const allSamples = [
+      'sample31.png',
       'sample30.png',
       'sample29.png',
       'sample28.png',
@@ -333,9 +334,6 @@
         img.src = `media/${filename}`;
         img.alt = `Sample ${index + 1}`;
         img.className = 'w-[calc(100vw-2rem)] max-w-sm sm:w-full flex-shrink-0 sm:flex-shrink object-contain transition-transform duration-500 sm:hover:scale-[1.03] hover:shadow-2xl hover:shadow-brand-500/30 rounded-2xl shadow border border-slate-200/60';
-        img.loading = index < 6 ? 'eager' : 'lazy';
-        img.decoding = 'async';
-        img.fetchPriority = index < 4 ? 'high' : 'low';
         img.loading = index < 6 ? 'eager' : 'lazy';
         img.decoding = 'async';
         img.fetchPriority = index < 4 ? 'high' : 'low';

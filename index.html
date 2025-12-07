@@ -750,6 +750,7 @@
     // Sample Images Management System
     // TO ADD NEW SAMPLES: Just add the filename to this array (newest first)
     const allSamples = [
+      'sample31.png',
       'sample30.png',
       'sample29.png',
       'sample28.png',
@@ -1020,6 +1021,13 @@
             target.scrollIntoView({ behavior: 'smooth' });
           }
         }, 100);
+      }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeModal();
       }
     });
   </script>
