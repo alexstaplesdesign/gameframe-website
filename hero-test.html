@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hero Section Tests - GameFrame</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand': {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            200: '#99f6e4',
+                            300: '#5eead4',
+                            400: '#2dd4bf',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient-1 {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #475569 75%, #64748b 100%);
+        }
+        .hero-gradient-2 {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 25%, #2563eb 50%, #3b82f6 75%, #60a5fa 100%);
+        }
+        .hero-gradient-3 {
+            background: linear-gradient(135deg, #7c2d12 0%, #dc2626 25%, #ea580c 50%, #f59e0b 75%, #eab308 100%);
+        }
+        .hero-gradient-4 {
+            background: linear-gradient(135deg, #065f46 0%, #047857 25%, #059669 50%, #10b981 75%, #34d399 100%);
+        }
+        .hero-gradient-5 {
+            background: linear-gradient(135deg, #581c87 0%, #7c3aed 25%, #8b5cf6 50%, #a78bfa 75%, #c4b5fd 100%);
+        }
+        .hero-gradient-6 {
+            background: linear-gradient(135deg, #be123c 0%, #e11d48 25%, #f43f5e 50%, #fb7185 75%, #fda4af 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation for testing -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3">
+            <div class="flex justify-center space-x-8">
+                <a href="#hero1" class="text-blue-600 hover:text-blue-800 font-medium">Hero Option 1</a>
+                <a href="#hero2" class="text-blue-600 hover:text-blue-800 font-medium">Hero Option 2</a>
+                <a href="#hero3" class="text-blue-600 hover:text-blue-800 font-medium">Hero Option 3</a>
+                <a href="#hero4" class="text-blue-600 hover:text-blue-800 font-medium">Hero Option 4</a>
+                <a href="#hero5" class="text-blue-600 hover:text-blue-800 font-medium">Hero Option 5</a>
+                <a href="#hero6" class="text-blue-600 hover:text-blue-800 font-medium">Hero Option 6</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO OPTION 1: Split Layout with Large Image -->
+    <section id="hero1" class="hero-gradient-1 text-white min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-brand-200 mb-4">OPTION 1: Split Layout</h2>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+                <!-- Left Content -->
+                <div class="space-y-8">
+                    <div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                            Turn game day photos into 
+                            <span class="text-brand-200">pro style sports graphics</span>
+                        </h1>
+                    </div>
+                    
+                    <p class="text-xl lg:text-2xl text-slate-300 leading-relaxed">
+                        Transform your child's sports moments into professional-quality graphics they'll treasure forever.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#order" class="inline-flex items-center justify-center rounded-lg bg-brand-500 hover:bg-brand-600 text-white px-8 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300">
+                            Order Now - $35
+                        </a>
+                        <a href="#samples" class="inline-flex items-center justify-center rounded-lg border-2 border-white/30 hover:border-white/50 text-white px-8 py-4 text-lg font-semibold transition-all duration-300">
+                            View Samples
+                        </a>
+                    </div>
+                    
+                    <div class="flex items-center space-x-6 pt-4">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-brand-200">500+</div>
+                            <div class="text-sm text-slate-400">Graphics Created</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-brand-200">48hr</div>
+                            <div class="text-sm text-slate-400">Turnaround</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-brand-200">100%</div>
+                            <div class="text-sm text-slate-400">Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Image -->
+                <div class="lg:order-last">
+                    <div class="relative">
+                        <div class="rounded-2xl overflow-hidden bg-white/10 ring-1 ring-white/20 h-96 lg:h-[32rem] relative shadow-2xl" style="box-shadow: 0 0 40px rgba(20, 184, 166, 0.4), 0 0 80px rgba(20, 184, 166, 0.2);">
+                            <img src="media/sample1.png" alt="Sample Sports Graphic" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                        </div>
+                        <!-- Floating elements -->
+                        <div class="absolute -top-4 -right-4 bg-brand-500 text-white px-4 py-2 rounded-lg font-semibold shadow-lg">
+                            Digital Only $35
+                        </div>
+                        <div class="absolute -bottom-4 -left-4 bg-white text-slate-800 px-4 py-2 rounded-lg font-semibold shadow-lg">
+                            48hr Delivery
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HERO OPTION 2: Centered with Background Image -->
+    <section id="hero2" class="relative min-h-screen flex items-center">
+        <div class="absolute inset-0 hero-gradient-2"></div>
+        <div class="absolute inset-0 bg-black/40"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-yellow-400 mb-4">OPTION 2: Centered Hero</h2>
+            </div>
+            
+            <div class="max-w-4xl mx-auto space-y-8">
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight">
+                    Professional 
+                    <span class="text-yellow-400">Sports Graphics</span>
+                    for Your Athlete
+                </h1>
+                
+                <p class="text-xl lg:text-2xl text-blue-100 leading-relaxed max-w-3xl mx-auto">
+                    Turn any game day photo into a stunning sports graphic that captures the excitement and pride of youth athletics.
+                </p>
+                
+                <!-- Sample Images Row -->
+                <div class="flex justify-center space-x-4 py-8">
+                    <div class="w-24 h-32 lg:w-32 lg:h-40 rounded-lg overflow-hidden shadow-xl border-4 border-white/20">
+                        <img src="media/sample2.png" alt="Sample 1" class="w-full h-full object-cover">
+                    </div>
+                    <div class="w-24 h-32 lg:w-32 lg:h-40 rounded-lg overflow-hidden shadow-xl border-4 border-white/20">
+                        <img src="media/sample3.png" alt="Sample 2" class="w-full h-full object-cover">
+                    </div>
+                    <div class="w-24 h-32 lg:w-32 lg:h-40 rounded-lg overflow-hidden shadow-xl border-4 border-white/20">
+                        <img src="media/sample4.png" alt="Sample 3" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row justify-center gap-6">
+                    <a href="#order" class="inline-flex items-center justify-center rounded-full bg-yellow-400 hover:bg-yellow-500 text-blue-900 px-12 py-5 text-xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105">
+                        Start Your Order
+                        <svg class="ml-3 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                    <a href="#portfolio" class="inline-flex items-center justify-center rounded-full border-3 border-white/70 hover:border-white text-white px-12 py-5 text-xl font-bold transition-all duration-300 hover:bg-white/10">
+                        View Portfolio
+                    </a>
+                </div>
+                
+                <div class="pt-8">
+                    <div class="inline-flex items-center space-x-8 bg-white/10 backdrop-blur-sm rounded-full px-8 py-4">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-yellow-400">$35</div>
+                            <div class="text-sm text-blue-100">Digital</div>
+                        </div>
+                        <div class="w-px h-8 bg-white/30"></div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-yellow-400">48hrs</div>
+                            <div class="text-sm text-blue-100">Delivery</div>
+                        </div>
+                        <div class="w-px h-8 bg-white/30"></div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-yellow-400">100%</div>
+                            <div class="text-sm text-blue-100">Custom</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HERO OPTION 3: Image-First with Overlay Text -->
+    <section id="hero3" class="relative min-h-screen">
+        <div class="text-center py-8 bg-white">
+            <h2 class="text-3xl font-bold text-orange-600 mb-4">OPTION 3: Image-First Layout</h2>
+        </div>
+        
+        <!-- Large Background Image -->
+        <div class="relative h-[70vh] lg:h-[80vh] overflow-hidden">
+            <img src="media/sample1.png" alt="Featured Sports Graphic" class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-gradient-3 opacity-80"></div>
+            
+            <!-- Overlay Content -->
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="text-center text-white px-4 max-w-4xl">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-tight mb-6">
+                        GAMEFRAME
+                    </h1>
+                    <p class="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 text-yellow-300">
+                        Professional Sports Graphics
+                    </p>
+                    <p class="text-lg lg:text-xl text-orange-100 mb-8 max-w-2xl mx-auto leading-relaxed">
+                        Transform your athlete's photo into a professional sports graphic that celebrates their passion and dedication.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <a href="#order" class="inline-block bg-yellow-500 hover:bg-yellow-400 text-black px-10 py-4 rounded-full text-xl font-bold shadow-2xl transition-all duration-300 transform hover:scale-105">
+                            ORDER NOW - $35
+                        </a>
+                        <div class="text-sm text-orange-200">
+                            ⚡ 48-hour turnaround • 💯 100% satisfaction guarantee
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Info Bar -->
+        <div class="bg-slate-900 text-white py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="space-y-2">
+                        <div class="text-3xl font-bold text-yellow-400">500+</div>
+                        <div class="text-slate-300">Athletes Featured</div>
+                        <div class="text-sm text-slate-400">Across all sports</div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="text-3xl font-bold text-yellow-400">48hr</div>
+                        <div class="text-slate-300">Fast Delivery</div>
+                        <div class="text-sm text-slate-400">Digital download ready</div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="text-3xl font-bold text-yellow-400">$35</div>
+                        <div class="text-slate-300">Digital Graphics</div>
+                        <div class="text-sm text-slate-400">Print options available</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HERO OPTION 4: Card-Based Layout -->
+    <section id="hero4" class="bg-white min-h-screen py-16">
+        <div class="text-center py-8">
+            <h2 class="text-3xl font-bold text-emerald-600 mb-4">OPTION 4: Card-Based Layout</h2>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6">
+                    Custom 
+                    <span class="text-emerald-600">Sports Graphics</span> 
+                    That Tell Your Story
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Every athlete deserves to see their hard work celebrated. We create stunning, personalized graphics that capture the spirit of competition.
+                </p>
+            </div>
+            
+            <!-- Three Feature Cards -->
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-2xl p-8 text-center shadow-xl">
+                    <div class="w-24 h-32 mx-auto mb-6 rounded-lg overflow-hidden shadow-lg">
+                        <img src="media/sample5.png" alt="Sample 1" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-emerald-800 mb-3">Quick Turnaround</h3>
+                    <p class="text-emerald-700 mb-4">Your custom graphic delivered in just 48 hours</p>
+                    <div class="text-2xl font-bold text-emerald-600">48hrs</div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-2xl p-8 text-center shadow-xl transform scale-105">
+                    <div class="w-24 h-32 mx-auto mb-6 rounded-lg overflow-hidden shadow-lg">
+                        <img src="media/sample6.png" alt="Sample 2" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-emerald-800 mb-3">Affordable Pricing</h3>
+                    <p class="text-emerald-700 mb-4">Professional quality without breaking the bank</p>
+                    <div class="text-2xl font-bold text-emerald-600">$35</div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-2xl p-8 text-center shadow-xl">
+                    <div class="w-24 h-32 mx-auto mb-6 rounded-lg overflow-hidden shadow-lg">
+                        <img src="media/sample7.png" alt="Sample 3" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-emerald-800 mb-3">100% Custom</h3>
+                    <p class="text-emerald-700 mb-4">Every design is unique to your athlete</p>
+                    <div class="text-2xl font-bold text-emerald-600">Custom</div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="#order" class="inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-700 text-white px-12 py-5 rounded-full text-xl font-bold shadow-2xl transition-all duration-300 transform hover:scale-105 mr-4">
+                    Order Your Graphic
+                    <svg class="ml-3 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                </a>
+                <a href="#portfolio" class="inline-flex items-center justify-center border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-50 px-12 py-5 rounded-full text-xl font-bold transition-all duration-300">
+                    View More Samples
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- HERO OPTION 5: BOLD Purple & Yellow -->
+    <section id="hero5" class="relative min-h-screen">
+        <div class="text-center py-8 bg-white relative z-10">
+            <h2 class="text-3xl font-bold text-purple-600 mb-4">OPTION 5: BOLD Design</h2>
+        </div>
+        
+        <!-- Strong purple background with overlay -->
+        <div class="absolute inset-0 hero-gradient-5"></div>
+        <div class="absolute inset-0 bg-purple-900/20"></div>
+        
+        <!-- Bold centered layout -->
+        <div class="relative min-h-screen flex flex-col justify-center">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center text-white">
+                
+                <!-- Massive heading with impact -->
+                <div class="mb-12">
+                    <div class="inline-block bg-yellow-400 text-purple-900 px-8 py-3 rounded-full text-lg font-black mb-8 shadow-2xl transform hover:scale-105 transition-all">
+                        ⚡ 48-HOUR DELIVERY ⚡
+                    </div>
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black leading-none mb-8 tracking-tight">
+                        <span class="block text-white drop-shadow-2xl">GAMEFRAME</span>
+                        <span class="block text-yellow-300 drop-shadow-2xl text-6xl sm:text-7xl lg:text-8xl xl:text-9xl">SPORTS</span>
+                        <span class="block text-white drop-shadow-2xl">GRAPHICS</span>
+                    </h1>
+                    <p class="text-xl sm:text-2xl lg:text-3xl font-bold text-purple-100 leading-relaxed max-w-3xl mx-auto mb-12 drop-shadow-lg">
+                        TRANSFORM YOUR ATHLETE INTO A LEGEND
+                    </p>
+                </div>
+                
+                <!-- Bold featured image with dramatic styling -->
+                <div class="mb-12">
+                    <div class="max-w-lg mx-auto relative">
+                        <div class="rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(250,204,21,0.5)] relative bg-gradient-to-br from-yellow-400/20 to-purple-600/20 backdrop-blur-sm p-4">
+                            <img src="media/sample1.png" alt="Featured Sports Graphic" class="w-full h-auto object-cover rounded-2xl">
+                            <div class="absolute inset-0 bg-gradient-to-t from-purple-900/30 to-transparent rounded-3xl"></div>
+                        </div>
+                        <!-- Dramatic floating badges -->
+                        <div class="absolute -top-6 -right-6 bg-yellow-400 text-purple-900 px-6 py-3 rounded-2xl font-black text-xl shadow-2xl transform rotate-12 hover:rotate-0 transition-transform">
+                            $35
+                        </div>
+                        <div class="absolute -bottom-6 -left-6 bg-white text-purple-900 px-6 py-3 rounded-2xl font-black text-xl shadow-2xl transform -rotate-12 hover:rotate-0 transition-transform">
+                            48HR
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Massive call to action -->
+                <div class="space-y-6 mb-12">
+                    <a href="#order" class="inline-block bg-yellow-400 hover:bg-yellow-300 text-purple-900 px-16 py-6 rounded-full text-2xl lg:text-3xl font-black transition-all duration-300 transform hover:scale-110 shadow-[0_0_30px_rgba(250,204,21,0.6)] hover:shadow-[0_0_50px_rgba(250,204,21,0.8)] border-4 border-yellow-300">
+                        ORDER NOW!
+                    </a>
+                    <div class="text-lg font-bold text-yellow-300 drop-shadow-lg">
+                        ⚡ INSTANT DOWNLOAD • 🏆 100% SATISFACTION • 🎨 UNLIMITED REVISIONS
+                    </div>
+                </div>
+                
+                <!-- Bold stats with dramatic styling -->
+                <div class="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
+                    <div class="text-center bg-white/10 backdrop-blur-sm rounded-2xl py-6 px-4 shadow-xl">
+                        <div class="text-4xl sm:text-5xl font-black text-yellow-300 drop-shadow-lg">500+</div>
+                        <div class="text-sm font-bold text-purple-200">GRAPHICS CREATED</div>
+                    </div>
+                    <div class="text-center bg-white/10 backdrop-blur-sm rounded-2xl py-6 px-4 shadow-xl">
+                        <div class="text-4xl sm:text-5xl font-black text-yellow-300 drop-shadow-lg">48HR</div>
+                        <div class="text-sm font-bold text-purple-200">DELIVERY TIME</div>
+                    </div>
+                    <div class="text-center bg-white/10 backdrop-blur-sm rounded-2xl py-6 px-4 shadow-xl">
+                        <div class="text-4xl sm:text-5xl font-black text-yellow-300 drop-shadow-lg">100%</div>
+                        <div class="text-sm font-bold text-purple-200">SATISFACTION</div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- HERO OPTION 6: Minimal with Large Typography -->
+    <section id="hero6" class="bg-white min-h-screen">
+        <div class="text-center py-8 bg-gray-100">
+            <h2 class="text-3xl font-bold text-rose-600 mb-4">OPTION 6: Minimal Typography</h2>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <!-- Large Typography Section -->
+            <div class="text-center mb-20">
+                <div class="space-y-4 mb-12">
+                    <h1 class="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-black text-gray-900 leading-none">
+                        GAME
+                    </h1>
+                    <h1 class="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-black text-rose-500 leading-none -mt-4">
+                        FRAME
+                    </h1>
+                </div>
+                
+                <p class="text-xl lg:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed mb-12">
+                    Professional sports graphics that celebrate your athlete's dedication and capture their greatest moments.
+                </p>
+                
+                <div class="inline-flex items-center bg-gray-100 rounded-full p-2">
+                    <a href="#order" class="bg-rose-500 hover:bg-rose-600 text-white px-8 py-4 rounded-full font-bold text-lg mr-4 transition-colors duration-300">
+                        Order Now $35
+                    </a>
+                    <span class="text-gray-600 px-4">or</span>
+                    <a href="#portfolio" class="text-rose-600 hover:text-rose-700 px-8 py-4 font-bold text-lg transition-colors duration-300">
+                        View Samples →
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Minimal Sample Grid -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <img src="media/sample12.png" alt="Sample 1" class="w-full h-full object-cover">
+                </div>
+                <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 mt-8">
+                    <img src="media/sample13.png" alt="Sample 2" class="w-full h-full object-cover">
+                </div>
+                <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <img src="media/sample14.png" alt="Sample 3" class="w-full h-full object-cover">
+                </div>
+                <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 mt-8">
+                    <img src="media/sample15.png" alt="Sample 4" class="w-full h-full object-cover">
+                </div>
+            </div>
+            
+            <!-- Bottom Stats -->
+            <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div>
+                    <div class="text-4xl lg:text-5xl font-black text-rose-500 mb-2">500+</div>
+                    <div class="text-gray-600 text-lg">Athletes Featured</div>
+                </div>
+                <div>
+                    <div class="text-4xl lg:text-5xl font-black text-rose-500 mb-2">48h</div>
+                    <div class="text-gray-600 text-lg">Delivery Time</div>
+                </div>
+                <div>
+                    <div class="text-4xl lg:text-5xl font-black text-rose-500 mb-2">100%</div>
+                    <div class="text-gray-600 text-lg">Satisfaction Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Summary -->
+    <section class="bg-white py-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Which Hero Style Do You Prefer?</h2>
+            <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <div class="p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-lg font-bold text-brand-600 mb-2">Option 1</h3>
+                    <p class="text-sm text-gray-600">Split Layout</p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-lg font-bold text-blue-600 mb-2">Option 2</h3>
+                    <p class="text-sm text-gray-600">Centered Hero</p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-lg font-bold text-orange-600 mb-2">Option 3</h3>
+                    <p class="text-sm text-gray-600">Image-First</p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-lg font-bold text-emerald-600 mb-2">Option 4</h3>
+                    <p class="text-sm text-gray-600">Card-Based</p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-lg font-bold text-purple-600 mb-2">Option 5</h3>
+                    <p class="text-sm text-gray-600">Diagonal Split</p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-lg font-bold text-rose-600 mb-2">Option 6</h3>
+                    <p class="text-sm text-gray-600">Minimal Typography</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
