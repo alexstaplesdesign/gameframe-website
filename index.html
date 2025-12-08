@@ -469,8 +469,8 @@
         toggleText.textContent = 'Open Order Form';
         toggleIcon.style.transform = 'rotate(0deg)';
       } else {
-        // Open form
-        container.style.maxHeight = '1600px';
+        // Open form - use a much larger height to accommodate dynamic content
+        container.style.maxHeight = '2500px';
         container.style.opacity = '1';
         toggleText.textContent = 'Close Order Form';
         toggleIcon.style.transform = 'rotate(180deg)';
