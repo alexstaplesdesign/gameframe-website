@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio – GameFrame Sports Card Designs</title>
-  <meta name="description" content="View our complete portfolio of custom sports graphics designs. GameFrame creates professional-quality sports graphics from your child's photos." />
+  <title>Portfolio – GameFrame Sports Graphics</title>
+  <meta name="description" content="View our complete portfolio of custom sports graphics and poster designs. Professional-quality work that captures the excitement of game day." />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -12,388 +12,903 @@
       theme: {
         extend: {
           colors: {
-            brand: { 50:'#ecfeff',100:'#cffafe',200:'#a5f3fc',300:'#67e8f9',400:'#22d3ee',500:'#06b6d4',600:'#0891b2',700:'#0e7490',800:'#155e75',900:'#164e63' },
-            accent: { 500:'#eb2a74' }
+            'primary': {
+              '50': '#eff6ff',
+              '500': '#3b82f6',
+              '600': '#0ea5e9',
+              '700': '#0284c7',
+              '900': '#1e40af'
+            },
+            'accent': {
+              '500': '#d946ef',
+              '600': '#c026d3',
+              '700': '#a21caf'
+            }
           },
-          fontFamily: { sans: ["Inter","system-ui","Segoe UI","Roboto","Helvetica Neue","Arial"] }
+          fontFamily: {
+            'sans': ['Inter', 'system-ui', 'sans-serif']
+          }
         }
       }
     }
   </script>
-
-  <style>
-    .hover-glow { transition: box-shadow .35s ease, transform .35s ease; }
-    .hover-glow:hover { box-shadow: 0 10px 30px rgba(235,42,116,.35), 0 6px 16px rgba(2,6,23,.35); transform: translateY(-2px); }
-    .revealable { opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s cubic-bezier(.22,1,.36,1); }
-    .revealed { opacity: 1; transform: none; }
-    
-    /* Hide scrollbar for horizontal scroll */
-    #portfolio-gallery::-webkit-scrollbar { display: none; }
-    #portfolio-gallery { scrollbar-width: none; -ms-overflow-style: none; }
-    
-    /* Fade effect to indicate more content on desktop only */
-    .gallery-container { position: relative; }
-    .gallery-container::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 20px;
-      height: 100%;
-      background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.8));
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    @media (min-width: 640px) {
-      .gallery-container::after { opacity: 1; }
-    }
-    
-    /* Smooth snap scrolling for mobile carousel */
-    @supports (scroll-snap-type: x mandatory) {
-      #portfolio-gallery {
-        scroll-snap-type: x mandatory;
-      }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans">
+
+<body class="bg-gray-50 text-gray-900 font-sans">
+  
   <!-- Header -->
-  <header class="bg-slate-900 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="media/gameframelogo.png" alt="GameFrame Logo" class="h-8 w-auto" loading="eager" fetchpriority="high">
-        <span class="font-bold text-xl tracking-tight bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">GameFrame</span>
+  <header class="bg-white sticky top-0 z-50 shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="concept-home.html" class="flex items-center space-x-3">
+        <img src="media/gameframelogo.png" alt="GameFrame Logo" class="h-8 w-auto">
+        <span class="font-bold text-xl text-gray-900">GameFrame</span>
       </a>
-      <nav class="hidden sm:flex items-center gap-6 text-sm opacity-90">
-        <a href="index.html" class="hover:opacity-100">Home</a>
-        <a href="index.html#options" class="hover:opacity-100">Packages</a>
-        <a href="index.html#faq" class="hover:opacity-100">FAQ</a>
+      <nav class="hidden md:flex items-center space-x-8 text-gray-600">
+        <a href="concept-home.html" class="hover:text-primary-600 transition-colors">Home</a>
+        <a href="concept-home.html#packages" class="hover:text-primary-600 transition-colors">Packages</a>
+        <a href="concept-home.html#about" class="hover:text-primary-600 transition-colors">About</a>
+        <a href="concept-home.html#order" class="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors">Get Started</a>
       </nav>
     </div>
   </header>
 
-  <!-- Portfolio Hero Section -->
-  <section class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6">
-        Our <span class="text-brand-400">Portfolio</span>
+  <!-- Hero Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h1 class="text-5xl font-bold text-gray-900 mb-6">
+        Our <span class="bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent">Portfolio</span>
       </h1>
-      <p class="text-xl text-slate-300 max-w-2xl mx-auto">
-        Explore our complete collection of custom sports card designs. Each card is carefully crafted to capture the excitement and pride of game day.
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+        Explore our collection of custom sports graphics and posters. Each design is crafted to capture the pride and excitement of your young athlete's achievements.
       </p>
+      
+      <!-- Quick Stats -->
+      <div class="flex justify-center space-x-8 text-sm text-gray-500">
+        <div class="flex items-center space-x-2">
+          <svg class="w-5 h-5 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>200+ Designs Created</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <svg class="w-5 h-5 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+          </svg>
+          <span>48-Hour Turnaround</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <svg class="w-5 h-5 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+          </svg>
+          <span>5-Star Rated</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Tabs -->
+  <section class="py-8 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-wrap justify-center gap-4">
+        <button class="filter-btn active" data-filter="all">All Sports</button>
+        <button class="filter-btn" data-filter="baseball">Baseball</button>
+        <button class="filter-btn" data-filter="basketball">Basketball</button>
+        <button class="filter-btn" data-filter="football">Football</button>
+        <button class="filter-btn" data-filter="hockey">Hockey</button>
+        <button class="filter-btn" data-filter="softball">Softball</button>
+        <button class="filter-btn" data-filter="team-photos" id="team-photos-btn">Team Photos</button>
+        <button class="filter-btn" data-filter="other">Other Sports</button>
+      </div>
+      
+      <!-- Team Subcategory Dropdown (hidden by default) -->
+      <div id="team-subcategories" class="hidden mt-6 max-w-4xl mx-auto">
+        <div class="text-center mb-4">
+          <h3 class="text-lg font-semibold text-gray-800 mb-3">Select a Team</h3>
+          <div class="flex flex-wrap justify-center gap-3" id="team-list">
+            <!-- Team buttons will be generated dynamically -->
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Portfolio Gallery -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
       
-      <!-- Mobile scroll hint -->
-      <div class="text-center mb-6 sm:hidden">
-        <p class="text-slate-600 text-sm flex items-center justify-center gap-2">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
-          </svg>
-          Swipe to explore our portfolio
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-          </svg>
-        </p>
-      </div>
-      
-      <div class="gallery-container relative">
-
-        <div id="portfolio-gallery" class="flex gap-4 overflow-x-auto pb-4 sm:grid sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 sm:overflow-visible sm:pb-0 sm:gap-6" style="-webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
-          <!-- All portfolio samples will be loaded here by JavaScript -->
+      <div id="portfolio-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1">
+        
+        <!-- Portfolio items will be automatically generated by JavaScript -->
+        
+        <!-- Load More Button -->
+        <div class="col-span-full flex justify-center mt-12">
+          <button id="load-more" class="border border-primary-300 hover:border-primary-500 text-primary-700 hover:text-primary-800 px-8 py-3 rounded-lg font-semibold transition-colors inline-flex items-center space-x-2">
+            <span>Load More Designs</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Endless Possibilities Section -->
-  <section id="use-cases" class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-16 lg:py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-white">Endless Possibilities</h2>
-        <p class="text-xl text-slate-300 max-w-3xl mx-auto">Your custom sports card designs can be transformed into amazing keepsakes and gifts. Here are just some of the ways our clients use their graphics:</p>
+  <!-- Creative Applications -->
+  <section class="py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Endless Creative Possibilities</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Your custom graphics can be transformed into amazing keepsakes. Here are popular ways families use their designs:
+        </p>
       </div>
       
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
         <!-- Wall Art -->
         <div class="text-center group">
-          <div class="relative overflow-visible rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-brand-500/30 transition-all duration-500 hover:z-50 bg-white/5 backdrop-blur-sm border border-white/10">
-            <img src="media/useexamples/use1.png" alt="Wall Art Example" class="w-full h-48 object-cover group-hover:object-contain group-hover:h-auto group-hover:max-h-96 group-hover:absolute group-hover:inset-0 group-hover:z-50 group-hover:bg-slate-900 group-hover:rounded-2xl group-hover:shadow-2xl transition-all duration-500 rounded-2xl" />
+          <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300 mb-4">
+            <img src="media/useexamples/use1.png" alt="Wall poster display" class="w-full h-48 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300">
           </div>
-          <h3 class="mt-4 font-semibold text-white">Wall Art</h3>
-          <p class="text-sm text-slate-400">Canvas prints & framed displays</p>
+          <h3 class="font-semibold text-gray-900 mb-2">Wall Posters</h3>
+          <p class="text-sm text-gray-600">Canvas prints & framed displays for bedrooms and team rooms</p>
         </div>
         
-        <!-- Custom Cups -->
+        <!-- Custom Apparel -->
         <div class="text-center group">
-          <div class="relative overflow-visible rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-brand-500/30 transition-all duration-500 hover:z-50 bg-white/5 backdrop-blur-sm border border-white/10">
-            <img src="media/useexamples/use2.png" alt="Custom Cup Example" class="w-full h-48 object-cover group-hover:object-contain group-hover:h-auto group-hover:max-h-96 group-hover:absolute group-hover:inset-0 group-hover:z-50 group-hover:bg-slate-900 group-hover:rounded-2xl group-hover:shadow-2xl transition-all duration-500 rounded-2xl" />
+          <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300 mb-4">
+            <img src="media/useexamples/use3.png" alt="Custom hoodie" class="w-full h-48 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300">
           </div>
-          <h3 class="mt-4 font-semibold text-white">Custom Cups</h3>
-          <p class="text-sm text-slate-400">Mugs & drinkware</p>
-        </div>
-        
-        <!-- Hooded Sweatshirts -->
-        <div class="text-center group">
-          <div class="relative overflow-visible rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-brand-500/30 transition-all duration-500 hover:z-50 bg-white/5 backdrop-blur-sm border border-white/10">
-            <img src="media/useexamples/use3.png" alt="Hooded Sweatshirt Example" class="w-full h-48 object-cover group-hover:object-contain group-hover:h-auto group-hover:max-h-96 group-hover:absolute group-hover:inset-0 group-hover:z-50 group-hover:bg-slate-900 group-hover:rounded-2xl group-hover:shadow-2xl transition-all duration-500 rounded-2xl" />
-          </div>
-          <h3 class="mt-4 font-semibold text-white">Hoodies</h3>
-          <p class="text-sm text-slate-400">Cozy sweatshirts & hoodies</p>
-        </div>
-        
-        <!-- Trading Cards -->
-        <div class="text-center group">
-          <div class="relative overflow-visible rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-brand-500/30 transition-all duration-500 hover:z-50 bg-white/5 backdrop-blur-sm border border-white/10">
-            <img src="media/useexamples/use4.png" alt="Baseball Card Example" class="w-full h-48 object-cover group-hover:object-contain group-hover:h-auto group-hover:max-h-96 group-hover:absolute group-hover:inset-0 group-hover:z-50 group-hover:bg-slate-900 group-hover:rounded-2xl group-hover:shadow-2xl transition-all duration-500 rounded-2xl" />
-          </div>
-          <h3 class="mt-4 font-semibold text-white">Trading Cards</h3>
-          <p class="text-sm text-slate-400">Professional card prints</p>
-        </div>
-        
-        <!-- Tote Bags -->
-        <div class="text-center group">
-          <div class="relative overflow-visible rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-brand-500/30 transition-all duration-500 hover:z-50 bg-white/5 backdrop-blur-sm border border-white/10">
-            <img src="media/useexamples/use5.png" alt="Tote Bag Example" class="w-full h-48 object-cover group-hover:object-contain group-hover:h-auto group-hover:max-h-96 group-hover:absolute group-hover:inset-0 group-hover:z-50 group-hover:bg-slate-900 group-hover:rounded-2xl group-hover:shadow-2xl transition-all duration-500 rounded-2xl" />
-          </div>
-          <h3 class="mt-4 font-semibold text-white">Tote Bags</h3>
-          <p class="text-sm text-slate-400">Carry your pride everywhere</p>
+          <h3 class="font-semibold text-gray-900 mb-2">Custom Apparel</h3>
+          <p class="text-sm text-gray-600">Hoodies, t-shirts, and team gear featuring their design</p>
         </div>
         
         <!-- Social Media -->
         <div class="text-center group">
-          <div class="relative overflow-visible rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-brand-500/30 transition-all duration-500 hover:z-50 bg-white/5 backdrop-blur-sm border border-white/10">
-            <img src="media/useexamples/use6.png" alt="Social Media Example" class="w-full h-48 object-cover group-hover:object-contain group-hover:h-auto group-hover:max-h-96 group-hover:absolute group-hover:inset-0 group-hover:z-50 group-hover:bg-slate-900 group-hover:rounded-2xl group-hover:shadow-2xl transition-all duration-500 rounded-2xl" />
+          <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300 mb-4">
+            <img src="media/useexamples/use6.png" alt="Social media post" class="w-full h-48 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300">
           </div>
-          <h3 class="mt-4 font-semibold text-white">Social Media</h3>
-          <p class="text-sm text-slate-400">Instagram & Facebook posts</p>
+          <h3 class="font-semibold text-gray-900 mb-2">Social Media</h3>
+          <p class="text-sm text-gray-600">Instagram stories, Facebook posts, and recruitment profiles</p>
         </div>
         
-        <!-- Sweatshirts -->
+        <!-- Gift Items -->
         <div class="text-center group">
-          <div class="relative overflow-visible rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-brand-500/30 transition-all duration-500 hover:z-50 bg-white/5 backdrop-blur-sm border border-white/10">
-            <img src="media/useexamples/use7.png" alt="Sweatshirt Example" class="w-full h-48 object-cover group-hover:object-contain group-hover:h-auto group-hover:max-h-96 group-hover:absolute group-hover:inset-0 group-hover:z-50 group-hover:bg-slate-900 group-hover:rounded-2xl group-hover:shadow-2xl transition-all duration-500 rounded-2xl" />
+          <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300 mb-4">
+            <img src="media/useexamples/use2.png" alt="Custom mug" class="w-full h-48 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300">
           </div>
-          <h3 class="mt-4 font-semibold text-white">Sweatshirts</h3>
-          <p class="text-sm text-slate-400">Comfortable casual wear</p>
-        </div>
-        
-        <!-- More Ideas -->
-        <div class="text-center group">
-          <div class="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-brand-500/30 transition-all duration-300 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 flex items-center justify-center h-48">
-            <div class="text-center p-6">
-              <div class="w-12 h-12 bg-brand-400/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-3 border border-brand-400/30">
-                <svg class="w-6 h-6 text-brand-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                </svg>
-              </div>
-              <h3 class="font-semibold text-slate-300 mb-1 text-sm">Your Ideas</h3>
-              <p class="text-xs text-slate-400">What will you create?</p>
-            </div>
-          </div>
-          <h3 class="mt-4 font-semibold text-white">& More!</h3>
-          <p class="text-sm text-slate-400">Tell us your creative ideas</p>
+          <h3 class="font-semibold text-gray-900 mb-2">Gift Items</h3>
+          <p class="text-sm text-gray-600">Mugs, photo books, and keepsakes for family</p>
         </div>
       </div>
       
       <div class="text-center mt-12">
-        <p class="text-slate-300 mb-6 text-lg">Ready to bring your vision to life? Each design comes as a high-resolution file perfect for any printing service.</p>
-        <a href="index.html#order" class="inline-flex items-center justify-center rounded-lg bg-[#F5A623] hover:bg-gradient-to-r hover:from-[#F5A623] hover:to-[#E8941A] px-8 py-4 font-semibold text-white shadow-lg hover:shadow-xl hover:shadow-orange-500/30 transition-all duration-300 transform hover:scale-[1.05]">
-          Start Creating
-          <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        <p class="text-gray-600 mb-6">All designs come as high-resolution files perfect for any printing service.</p>
+        <a href="concept-home.html#order" class="inline-flex items-center bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors">
+          Start Your Design
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
           </svg>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Call to Action Section -->
-  <section class="py-20 bg-gradient-to-br from-brand-500 via-brand-600 to-brand-700 text-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready for Your Custom Sports Card?</h2>
-      <p class="text-xl text-brand-100 mb-8 max-w-2xl mx-auto">
-        Transform your child's game day photo into a professional sports card that they'll treasure forever.
-      </p>
-      <div class="flex justify-center">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgYPui4ngG0xwZdCkuHQZwN-GRuGG3L07Kzxnh_2DY8TQ9rg/viewform?usp=preview" target="_blank" class="inline-flex items-center justify-center rounded-lg px-8 py-4 font-semibold text-white shadow-lg hover:shadow-xl transition-all duration-300" style="background-color: #F5A623; box-shadow: 0 4px 14px 0 rgba(245, 166, 35, 0.39);" onmouseover="this.style.background='linear-gradient(135deg, #F5A623 0%, #E8941A 100%)'" onmouseout="this.style.backgroundColor='#F5A623'">
-          Start Your Order
-          <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </a>
+  <!-- Customer Testimonials -->
+  <section class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">What Parents Are Saying</h2>
+        <p class="text-xl text-gray-600">
+          Real feedback from families who love their custom graphics
+        </p>
       </div>
-      <div class="mt-8">
-        <a href="index.html" class="inline-flex items-center text-brand-100 hover:text-white transition-colors duration-300">
-          <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-          </svg>
-          Back to Home
-        </a>
+      
+      <div class="grid lg:grid-cols-3 gap-8">
+        
+        <!-- Testimonial 1 -->
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center">
+              <span class="text-white font-semibold text-sm">MK</span>
+            </div>
+            <div>
+              <div class="font-semibold text-gray-900">Michelle K.</div>
+              <div class="flex items-center space-x-1">
+                <div class="flex space-x-1">
+                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <blockquote class="text-gray-700">
+            "Alex created the most beautiful baseball poster for my son! The quality was incredible and now it's the centerpiece of his room. Worth every penny!"
+          </blockquote>
+          <div class="mt-4 text-sm text-gray-500">Baseball mom • 2 days ago</div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center">
+              <span class="text-white font-semibold text-sm">ST</span>
+            </div>
+            <div>
+              <div class="font-semibold text-gray-900">Sarah T.</div>
+              <div class="flex items-center space-x-1">
+                <div class="flex space-x-1">
+                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <blockquote class="text-gray-700">
+            "Fast turnaround and professional quality! Got my daughter's softball graphics in 4 days and it looks magazine-quality. Alex was super responsive!"
+          </blockquote>
+          <div class="mt-4 text-sm text-gray-500">Softball mom • 1 week ago</div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center">
+              <span class="text-white font-semibold text-sm">LM</span>
+            </div>
+            <div>
+              <div class="font-semibold text-gray-900">Lisa M.</div>
+              <div class="flex items-center space-x-1">
+                <div class="flex space-x-1">
+                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <blockquote class="text-gray-700">
+            "The basketball poster design is stunning and my son has it displayed proudly in his room! Much better than expensive team photo packages."
+          </blockquote>
+          <div class="mt-4 text-sm text-gray-500">Basketball mom • 2 weeks ago</div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-slate-900 text-white py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="flex items-center justify-center gap-3 mb-6">
-        <img src="media/gameframelogo.png" alt="GameFrame Logo" class="h-8 w-auto">
-        <span class="font-bold text-xl tracking-tight">GameFrame</span>
-      </div>
-      <p class="text-slate-400 mb-4">Custom sports card designs that capture the magic of game day.</p>
-      <div class="flex justify-center gap-6 text-sm">
-        <a href="index.html" class="hover:text-brand-400 transition-colors">Home</a>
-        <a href="index.html#pricing" class="hover:text-brand-400 transition-colors">Pricing</a>
-        <a href="index.html#faq" class="hover:text-brand-400 transition-colors">FAQ</a>
-      </div>
+  <footer class="bg-gray-900 text-white py-16">
+    <div class="max-w-6xl mx-auto px-6">
       
-      <!-- Social Media Links -->
-      <div class="flex justify-center gap-4 mt-6">
-        <a href="#" class="w-10 h-10 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-colors duration-300" aria-label="Facebook">
-          <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-          </svg>
-        </a>
-        <a href="https://www.instagram.com/gameframedesigns/" target="_blank" class="w-10 h-10 bg-gradient-to-br from-purple-600 via-pink-600 to-orange-400 hover:from-purple-700 hover:via-pink-700 hover:to-orange-500 rounded-full flex items-center justify-center transition-all duration-300" aria-label="Instagram">
-          <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-          </svg>
-        </a>
-        <a href="#" class="w-10 h-10 bg-black hover:bg-gray-800 rounded-full flex items-center justify-center transition-colors duration-300" aria-label="TikTok">
-          <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-          </svg>
-        </a>
-      </div>
-      
-      <div class="mt-6 pt-8 border-t border-slate-800 text-slate-500 text-sm">
-        © 2024 GameFrame. All rights reserved.
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        
+        <!-- Left: Branding -->
+        <div class="space-y-6">
+          <div class="flex items-center space-x-3">
+            <img src="media/gameframelogo.png" alt="GameFrame Logo" class="h-8 w-auto">
+            <span class="font-bold text-xl">GameFrame</span>
+          </div>
+          
+          <p class="text-gray-400 max-w-md">
+            Transforming game day photos into professional sports graphics that athletes and families treasure forever.
+          </p>
+          
+          <!-- Instagram Call to Action -->
+          <div class="bg-gray-800 border border-gray-600 rounded-lg p-4">
+            <div class="flex items-center space-x-3 mb-2">
+              <svg class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.40s-.644-1.44-1.439-1.40z"/>
+              </svg>
+              <span class="text-gray-200 font-medium">Follow @gameframedesigns</span>
+            </div>
+            <p class="text-gray-400 text-sm">See our latest work and behind-the-scenes content</p>
+            <a href="https://instagram.com/gameframedesigns" target="_blank" class="inline-block mt-3 bg-gray-700 text-gray-200 px-4 py-2 rounded-md font-medium text-sm hover:bg-gray-600 transition-colors">
+              Follow Now →
+            </a>
+          </div>
+          
+          <div class="flex space-x-4">
+            <a href="https://www.instagram.com/gameframedesigns/" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.40s-.644-1.44-1.439-1.40z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Right: Contact -->
+        <div class="space-y-6">
+          <h3 class="text-lg font-semibold">Get in Touch</h3>
+          
+          <div class="space-y-4">
+            <a href="https://m.me/AlexJStaples" target="_blank" class="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0C5.374 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.626 0 12-4.974 12-11.111C24 4.974 18.626 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.26L19.732 8l-6.541 6.963z"/>
+              </svg>
+              <span>Message us directly</span>
+            </a>
+          </div>
+          
+          <div class="text-sm text-gray-500">
+            © 2025 GameFrame. All rights reserved.
+          </div>
+        </div>
+        
       </div>
     </div>
   </footer>
 
-  <!-- Portfolio Management System -->
+  <!-- Sticky Messenger Button -->
+  <div id="messenger-btn" class="fixed bottom-6 right-6 z-50">
+    <div id="messenger-tooltip" class="absolute bottom-16 right-0 bg-gray-900 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 transform translate-y-2 transition-all duration-300 pointer-events-none">
+      Questions? Message us!
+    </div>
+    <button class="bg-primary-600 hover:bg-primary-700 text-white w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group" onclick="window.open('https://m.me/gameframedesigns', '_blank')">
+      <svg class="w-6 h-6 transition-transform group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2C6.5 2 2 6.1 2 11.2c0 2.9 1.3 5.5 3.4 7.3V22l3.4-1.9c.9.2 1.8.4 2.7.4 5.5 0 10-4.1 10-9.2S17.5 2 12 2zm1.1 12.4l-2.5-2.7-4.9 2.7 5.4-5.7 2.5 2.7 4.9-2.7-5.4 5.7z"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="https://tally.so/widgets/embed.js"></script>
+  
   <script>
-    // Sample Images Management System
-    // TO ADD NEW SAMPLES: Just add the filename to this array (newest first)
-    const allSamples = [
-      'sample37.png',
+    // Auto-generate portfolio from your existing images
+    const portfolioImages = [
+      'sample47-softball.png',
+      'sample46-softball.png',
+      'sample45-softball.png',
+      'sample44-softball.png',
+      'sample43-softball.png',
+      'sample42-softball.png',
+      'sample41-baseball.png',
+      'sample40-football.png',
+      'sample39-softball.png',
+      'sample38-baseball.png',
+      'sample37-baseball.png',
       'sample36.png',
-      'sample35.png',
-      'sample34.png',
-      'sample33.png',
-      'sample32.png',
-      'sample31.png',
-      'sample30.png',
-      'sample29.png',
-      'sample28.png',
-      'sample27.png',
-      'sample26.png',
-      'sample25.png',
-      'sample24.png',
-      'sample23.png',
-      'sample22.png',
-      'sample21.png',
-      'sample20.png',
-      'sample19.png',
-      'sample18.png',
-      'sample17.png',
-      'sample16.png',
-      'sample15.png',
-      'sample14.png',
-      'sample13.png',
-      'sample12.png',
-      'sample11.png',
-      'sample10.png',
-      'sample9.png',
-      'sample8.png',
-      'sample7.png',
-      'sample6.png',
-      'sample5.png',
-      'sample4.png', 
-      'sample3.png',
-      'sample2.png',
-      'sample1.png'
-      // Add new samples here at the top, like:
-      // 'sample17.png',
+      'sample35-softball.png', 
+      'sample34-softball.png',
+      'sample33-softball.png',
+      'sample32-softball.png',
+      'sample31-basketball.png',
+      'sample30-baseball.png',
+      'sample29-baseball.png',
+      'sample28-baseball.png',
+      'sample27-baseball.png',
+      'sample26-baseball.png',
+      'sample25-baseball.png',
+      'sample24-baseball.png',
+      'sample23-baseball.png',
+      'sample22-football.png',
+      'sample21-baseball.png',
+      'sample20-baseball.png',
+      'sample19-baseball.png',
+      'sample18-baseball.png',
+      'sample17-baseball.png',
+      'sample16-baseball.png',
+      'sample15-softball.png',
+      'sample14-baseball.png',
+      'sample13-baseball.png',
+      'sample12-baseball.png',
+      'sample11-baseball.png',
+      'sample10-baseball.png',
+      'sample9-football.png',
+      'sample8-baseball.png',
+      'sample7-baseball.png',
+      'sample6-baseball.png',
+      'sample5-football.png',
+      'sample4-baseball.png',
+      'sample3-baseball.png',
+      'sample2-softball.png',
+      'sample1-baseball.png',
+      // Team Photos
+      'team-Hudson Valley VooDoo Dolls-01.png',
+      'team-Hudson Valley VooDoo Dolls-02.png',
+      'team-Hudson Valley VooDoo Dolls-03.png',
+      'team-Hudson Valley VooDoo Dolls-04.png',
+      'team-Hudson Valley VooDoo Dolls-05.png',
+      'team-Hudson Valley VooDoo Dolls-06.png',
+      'team-Hudson Valley VooDoo Dolls-07.png',
+      'team-Hudson Valley VooDoo Dolls-08.png',
+      'team-Hudson Valley VooDoo Dolls-09.png',
+      'team-Hudson Valley VooDoo Dolls-10.png',
+      'team-Hudson Valley VooDoo Dolls-11.png',
+      // Team Photos - use format: 'team-teamname-01.png', 'team-teamname-02.png', etc.
+      // Examples you can add:
+      // 'team-warriors-01.png',
+      // 'team-warriors-02.png', 
+      // 'team-eagles-01.png',
+      // 'team-eagles-02.png'
+      // Add your images here - use format: 'filename-sport.png'
+      // Examples: 'sample1-baseball.png', 'design2-basketball.png', 'player3-hockey.png'
     ];
 
-    // Load all samples for portfolio page
-    function loadPortfolioSamples() {
-      const container = document.getElementById('portfolio-gallery');
-      if (!container) return;
+    // Auto-detect sport from filename (no manual mapping needed!)
+    function getSportFromFilename(filename) {
+      const validSports = ['baseball', 'basketball', 'football', 'hockey', 'softball'];
       
-      // Add all sample images
-      allSamples.forEach((filename, index) => {
-        // Create wrapper div for positioning the badge
-        const wrapper = document.createElement('div');
-        wrapper.className = 'relative';
-        
-        const img = document.createElement('img');
-        img.src = `media/${filename}`;
-        img.alt = `Sample ${index + 1}`;
-        img.className = 'w-[calc(100vw-2rem)] max-w-sm sm:w-full flex-shrink-0 sm:flex-shrink object-contain transition-transform duration-500 sm:hover:scale-[1.03] hover:shadow-2xl hover:shadow-brand-500/30 rounded-2xl shadow border border-slate-200/60';
-        img.loading = index < 6 ? 'eager' : 'lazy';
-        img.decoding = 'async';
-        img.fetchPriority = index < 4 ? 'high' : 'low';
-        
-        wrapper.appendChild(img);
-        
-        container.appendChild(wrapper);
+      // Check for team photos first (e.g., "team-warriors-01.png")
+      if (filename.toLowerCase().includes('team-')) {
+        return 'team-photos';
+      }
+      
+      // Check if filename contains sport name (e.g., "sample1-baseball.png")
+      for (const sport of validSports) {
+        if (filename.toLowerCase().includes(`-${sport}`)) {
+          return sport;
+        }
+      }
+      
+      // Fallback to 'other' if no sport detected
+      return 'other';
+    }
+
+    // Get team name from filename (e.g., "team-warriors-01.png" -> "warriors")
+    function getTeamFromFilename(filename) {
+      const match = filename.toLowerCase().match(/team-([^-]+)-/);
+      return match ? match[1] : null;
+    }
+
+    // Get all unique team names from team photos
+    function getAvailableTeams() {
+      const teams = new Set();
+      portfolioImages.forEach(filename => {
+        if (getSportFromFilename(filename) === 'team-photos') {
+          const team = getTeamFromFilename(filename);
+          if (team) teams.add(team);
+        }
+      });
+      return Array.from(teams);
+    }
+
+    // Show team subcategories
+    function showTeamSubcategories() {
+      const subcategoriesDiv = document.getElementById('team-subcategories');
+      const teamListDiv = document.getElementById('team-list');
+      const availableTeams = getAvailableTeams();
+      
+      // Clear existing team buttons
+      teamListDiv.innerHTML = '';
+      
+      // If no teams available, show message
+      if (availableTeams.length === 0) {
+        teamListDiv.innerHTML = '<p class="text-gray-500 text-sm">No team photos available yet. Add team photos using format: team-teamname-01.png</p>';
+      } else {
+        // Create buttons for each team
+        availableTeams.forEach(team => {
+          const teamBtn = document.createElement('button');
+          teamBtn.className = 'px-4 py-2 bg-white border border-primary-300 hover:border-primary-500 text-primary-700 hover:text-primary-800 rounded-lg font-medium transition-colors';
+          teamBtn.textContent = team.charAt(0).toUpperCase() + team.slice(1);
+          teamBtn.addEventListener('click', () => selectTeam(team));
+          teamListDiv.appendChild(teamBtn);
+        });
+      }
+      
+      // Show the subcategories section
+      subcategoriesDiv.classList.remove('hidden');
+      
+      // Clear gallery while showing team selection
+      clearGallery();
+    }
+
+    // Hide team subcategories
+    function hideTeamSubcategories() {
+      const subcategoriesDiv = document.getElementById('team-subcategories');
+      subcategoriesDiv.classList.add('hidden');
+    }
+
+    // Select a specific team and show its photos
+    function selectTeam(teamName) {
+      // Filter images for this specific team
+      filteredImages = portfolioImages.filter(filename => {
+        const team = getTeamFromFilename(filename);
+        return team === teamName;
       });
       
-      // Add "More Designs Coming Soon" card at the end
-      const comingSoonCard = document.createElement('div');
-      comingSoonCard.className = 'w-[calc(100vw-2rem)] max-w-sm sm:w-full bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl shadow border border-slate-200/60 flex items-center justify-center transition-transform duration-500 hover:scale-[1.03] hover:shadow-2xl hover:shadow-brand-500/30 revealable';
-      comingSoonCard.style.aspectRatio = '2.5/3.5';
-      comingSoonCard.innerHTML = `
-        <div class="text-center p-6">
-          <div class="w-12 h-12 bg-brand-100 rounded-full flex items-center justify-center mx-auto mb-3">
-            <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-            </svg>
-          </div>
-          <h3 class="font-semibold text-slate-600 mb-1 text-sm">More Designs</h3>
-          <p class="text-xs text-slate-500">Coming Soon</p>
-        </div>
-      `;
-      container.appendChild(comingSoonCard);
-    }
-
-    // Initialize when page loads
-    document.addEventListener('DOMContentLoaded', function() {
-      loadPortfolioSamples();
-      setupScrollArrows();
+      // Reset pagination and load team photos
+      loadFilteredImages();
       
-      // Intersection Observer for animations
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.15 });
-
-      // Observe elements (with a slight delay to ensure they're loaded)
-      setTimeout(() => {
-        document.querySelectorAll('.revealable').forEach(el => {
-          observer.observe(el);
-        });
-      }, 100);
-    });
-    
-    // Simple function for any future scroll enhancements
-    function setupScrollArrows() {
-      // Function kept for future enhancements if needed
+      // Update active team button
+      const teamButtons = document.querySelectorAll('#team-list button');
+      teamButtons.forEach(btn => btn.classList.remove('bg-primary-500', 'text-white'));
+      teamButtons.forEach(btn => {
+        if (btn.textContent.toLowerCase() === teamName) {
+          btn.classList.add('bg-primary-500', 'text-white');
+        }
+      });
     }
+
+    // Clear gallery
+    function clearGallery() {
+      const container = document.getElementById('portfolio-grid');
+      if (!container) return;
+      
+      const existingItems = container.querySelectorAll('.portfolio-item');
+      existingItems.forEach(item => item.remove());
+      
+      // Hide load more button
+      const loadMoreBtn = document.getElementById('load-more');
+      if (loadMoreBtn) {
+        loadMoreBtn.closest('.col-span-full').style.display = 'none';
+      }
+    }
+
+    // Load filtered images with pagination
+    function loadFilteredImages() {
+      const container = document.getElementById('portfolio-grid');
+      const loadMoreBtn = document.getElementById('load-more');
+      
+      if (!container) return;
+      
+      // Clear existing items
+      const existingItems = container.querySelectorAll('.portfolio-item');
+      existingItems.forEach(item => item.remove());
+      
+      // Reset pagination
+      currentIndex = 0;
+      
+      // Load first 8 filtered images
+      const imagesToShow = filteredImages.slice(0, imagesPerPage);
+      
+      imagesToShow.forEach(filename => {
+        const category = getSportFromFilename(filename);
+        let displayName = category.charAt(0).toUpperCase() + category.slice(1);
+        
+        // Special handling for team photos
+        if (category === 'team-photos') {
+          const team = getTeamFromFilename(filename);
+          displayName = team ? team.charAt(0).toUpperCase() + team.slice(1) : 'Team Photo';
+        }
+        
+        const item = document.createElement('div');
+        item.className = 'portfolio-item group';
+        item.setAttribute('data-category', category);
+        
+        item.innerHTML = `
+          <div class="relative overflow-hidden bg-gray-100 aspect-[4/5] hover:opacity-80 transition-opacity duration-200 group">
+            <img src="media/${filename}" alt="${displayName} photo" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-200 flex items-center justify-center">
+              <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                <span class="text-xs font-medium bg-primary-600 px-2 py-1 rounded">${displayName}</span>
+              </div>
+            </div>
+          </div>
+        `;
+        
+        if (loadMoreBtn) {
+          container.insertBefore(item, loadMoreBtn.closest('.col-span-full'));
+        } else {
+          container.appendChild(item);
+        }
+      });
+      
+      currentIndex = imagesToShow.length;
+      
+      // Show/hide load more button
+      if (loadMoreBtn) {
+        const btnContainer = loadMoreBtn.closest('.col-span-full');
+        if (currentIndex < filteredImages.length) {
+          btnContainer.style.display = 'flex';
+        } else {
+          btnContainer.style.display = 'none';
+        }
+      }
+    }
+
+    // Pagination variables
+    let currentIndex = 0;
+    const imagesPerPage = 8;
+    let filteredImages = [...portfolioImages];
+
+    // Auto-populate portfolio (first 8 images)
+    function loadPortfolio() {
+      const container = document.getElementById('portfolio-grid');
+      const loadMoreBtn = document.getElementById('load-more');
+      
+      if (!container) return;
+      
+      // Clear existing items
+      const existingItems = container.querySelectorAll('.portfolio-item');
+      existingItems.forEach(item => item.remove());
+      
+      // Reset pagination
+      filteredImages = portfolioImages.filter(filename => {
+        return getSportFromFilename(filename) !== 'team-photos';
+      });
+      currentIndex = 0;
+      
+      // Load first 8 images
+      const imagesToShow = filteredImages.slice(0, imagesPerPage);
+      
+      imagesToShow.forEach(filename => {
+        const category = getSportFromFilename(filename);
+        const sportName = category.charAt(0).toUpperCase() + category.slice(1);
+        
+        const item = document.createElement('div');
+        item.className = 'portfolio-item group';
+        item.setAttribute('data-category', category);
+        
+        item.innerHTML = `
+          <div class="relative overflow-hidden bg-gray-100 aspect-[4/5] hover:opacity-80 transition-opacity duration-200 group">
+            <img src="media/${filename}" alt="${sportName} poster design" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-200 flex items-center justify-center">
+              <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                <span class="text-xs font-medium bg-primary-600 px-2 py-1 rounded">${sportName}</span>
+              </div>
+            </div>
+          </div>
+        `;
+        
+        if (loadMoreBtn) {
+          container.insertBefore(item, loadMoreBtn.closest('.col-span-full'));
+        } else {
+          container.appendChild(item);
+        }
+      });
+      
+      currentIndex = imagesToShow.length;
+      
+      // Show/hide load more button
+      if (loadMoreBtn) {
+        const btnContainer = loadMoreBtn.closest('.col-span-full');
+        if (currentIndex < filteredImages.length) {
+          btnContainer.style.display = 'flex';
+        } else {
+          btnContainer.style.display = 'none';
+        }
+      }
+    }
+
+    // Load more images function
+    function loadMoreImages() {
+      const container = document.getElementById('portfolio-grid');
+      const loadMoreBtn = document.getElementById('load-more');
+      
+      if (!container || currentIndex >= filteredImages.length) return;
+      
+      // Get next batch of images
+      const nextImages = filteredImages.slice(currentIndex, currentIndex + imagesPerPage);
+      
+      nextImages.forEach(filename => {
+        const category = getSportFromFilename(filename);
+        const sportName = category.charAt(0).toUpperCase() + category.slice(1);
+        
+        const item = document.createElement('div');
+        item.className = 'portfolio-item group';
+        item.setAttribute('data-category', category);
+        
+        item.innerHTML = `
+          <div class="relative overflow-hidden bg-gray-100 aspect-[4/5] hover:opacity-80 transition-opacity duration-200 group">
+            <img src="media/${filename}" alt="${sportName} poster design" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-200 flex items-center justify-center">
+              <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                <span class="text-xs font-medium bg-primary-600 px-2 py-1 rounded">${sportName}</span>
+              </div>
+            </div>
+          </div>
+        `;
+        
+        if (loadMoreBtn) {
+          container.insertBefore(item, loadMoreBtn.closest('.col-span-full'));
+        } else {
+          container.appendChild(item);
+        }
+      });
+      
+      currentIndex += nextImages.length;
+      
+      // Hide load more button if all images are loaded
+      if (loadMoreBtn && currentIndex >= filteredImages.length) {
+        loadMoreBtn.closest('.col-span-full').style.display = 'none';
+      }
+    }
+
+    // Load portfolio when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      loadPortfolio();
+      
+      // Wire up load more button
+      const loadMoreBtn = document.getElementById('load-more');
+      if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', loadMoreImages);
+      }
+    });
+
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterBtns.forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+        
+        // Handle team photos special case
+        if (filter === 'team-photos') {
+          showTeamSubcategories();
+          return;
+        }
+        
+        // Hide team subcategories for other filters
+        hideTeamSubcategories();
+        
+        // Filter images based on selection
+        if (filter === 'all') {
+          // Exclude team photos from "All Sports" view
+          filteredImages = portfolioImages.filter(filename => {
+            return getSportFromFilename(filename) !== 'team-photos';
+          });
+        } else {
+          filteredImages = portfolioImages.filter(filename => {
+            return getSportFromFilename(filename) === filter;
+          });
+        }
+        
+        // Reset pagination and reload first 8 images
+        const container = document.getElementById('portfolio-grid');
+        
+        if (!container) return;
+        
+        // Load filtered images
+        loadFilteredImages();
+      });
+    });
+
+    // Messenger button tooltip
+    const messengerBtn = document.getElementById('messenger-btn');
+    const tooltip = document.getElementById('messenger-tooltip');
+
+    messengerBtn.addEventListener('mouseenter', () => {
+      tooltip.classList.remove('opacity-0', 'translate-y-2');
+      tooltip.classList.add('opacity-100', 'translate-y-0');
+    });
+
+    messengerBtn.addEventListener('mouseleave', () => {
+      tooltip.classList.remove('opacity-100', 'translate-y-0');
+      tooltip.classList.add('opacity-0', 'translate-y-2');
+    });
+
+    // Draggable messenger button
+    let isDragging = false;
+    let startX, startY, startLeft, startTop;
+
+    messengerBtn.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      startX = e.clientX;
+      startY = e.clientY;
+      const rect = messengerBtn.getBoundingClientRect();
+      startLeft = rect.left;
+      startTop = rect.top;
+      messengerBtn.style.position = 'fixed';
+      messengerBtn.style.zIndex = '1000';
+      e.preventDefault();
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      
+      const deltaX = e.clientX - startX;
+      const deltaY = e.clientY - startY;
+      
+      let newLeft = startLeft + deltaX;
+      let newTop = startTop + deltaY;
+      
+      // Keep within viewport bounds
+      const btnWidth = messengerBtn.offsetWidth;
+      const btnHeight = messengerBtn.offsetHeight;
+      
+      newLeft = Math.max(0, Math.min(window.innerWidth - btnWidth, newLeft));
+      newTop = Math.max(0, Math.min(window.innerHeight - btnHeight, newTop));
+      
+      messengerBtn.style.left = newLeft + 'px';
+      messengerBtn.style.top = newTop + 'px';
+      messengerBtn.style.bottom = 'auto';
+      messengerBtn.style.right = 'auto';
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      if (!isDragging) return;
+      isDragging = false;
+      
+      // Snap to nearest edge
+      const rect = messengerBtn.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      
+      if (centerX < window.innerWidth / 2) {
+        // Snap to left
+        messengerBtn.style.left = '24px';
+        messengerBtn.style.right = 'auto';
+      } else {
+        // Snap to right
+        messengerBtn.style.right = '24px';
+        messengerBtn.style.left = 'auto';
+      }
+      
+      // Keep current vertical position
+      messengerBtn.style.top = Math.max(24, Math.min(window.innerHeight - 80, rect.top)) + 'px';
+      messengerBtn.style.bottom = 'auto';
+    });
+
+    // Prevent click when dragging
+    messengerBtn.addEventListener('click', (e) => {
+      if (Math.abs(e.clientX - startX) > 5 || Math.abs(e.clientY - startY) > 5) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    });
   </script>
+
+  <style>
+    .filter-btn {
+      padding: 0.5rem 1.5rem;
+      border-radius: 9999px;
+      border: 1px solid #d1d5db;
+      color: #6b7280;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      background-color: white;
+    }
+    
+    .filter-btn:hover {
+      border-color: #0ea5e9;
+      color: #0ea5e9;
+    }
+    
+    .filter-btn.active {
+      background-color: #0ea5e9;
+      color: white;
+      border-color: #0ea5e9;
+    }
+  </style>
+
 </body>
 </html>

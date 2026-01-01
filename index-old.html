@@ -1,0 +1,1133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>GameFrame – Custom Sports Graphics Designs</title>
+  <meta name="description" content="GameFrame turns your child's game day photo into a pro style sports graphic." />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pixelperfectdesigns.github.io/gameframe-website/" />
+  <meta property="og:title" content="GameFrame – Custom Sports Graphics Designs" />
+  <meta property="og:description" content="Turn game day photos into pro style sports graphics. High resolution digital files and professional prints shipped direct to your door." />
+  <meta property="og:image" content="https://pixelperfectdesigns.github.io/gameframe-website/media/social-preview.png" />
+  <meta property="og:image:url" content="https://pixelperfectdesigns.github.io/gameframe-website/media/social-preview.png" />
+  <meta property="og:image:secure_url" content="https://pixelperfectdesigns.github.io/gameframe-website/media/social-preview.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="GameFrame sports graphics design sample showing professional quality output" />
+  <meta property="og:site_name" content="GameFrame" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@gameframe" />
+  <meta name="twitter:creator" content="@gameframe" />
+  <meta name="twitter:url" content="https://pixelperfectdesigns.github.io/gameframe-website/" />
+  <meta name="twitter:title" content="GameFrame – Custom Sports Graphics Designs" />
+  <meta name="twitter:description" content="Turn game day photos into pro style sports graphics. Professional quality designs delivered digitally and as prints." />
+  <meta name="twitter:image" content="https://pixelperfectdesigns.github.io/gameframe-website/media/social-preview.png" />
+  <meta name="twitter:image:alt" content="GameFrame sports graphics design sample" />
+
+  <!-- Preload critical images -->
+  <link rel="preload" as="image" href="media/heroimage.png" fetchpriority="high">
+  <link rel="preload" as="image" href="media/sample29.png">
+  <link rel="preload" as="image" href="media/sample28.png">
+  <link rel="preload" as="image" href="media/sample27.png">
+  <link rel="preload" as="image" href="media/sample26.png">
+  <link rel="preload" as="image" href="media/sample25.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50:'#ecfeff',100:'#cffafe',200:'#a5f3fc',300:'#67e8f9',400:'#22d3ee',500:'#06b6d4',600:'#0891b2',700:'#0e7490',800:'#155e75',900:'#164e63' },
+            accent: { 500:'#eb2a74' }
+          },
+          fontFamily: { sans: ["Inter","system-ui","Segoe UI","Roboto","Helvetica Neue","Arial"] }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .hover-glow { transition: box-shadow .35s ease, transform .35s ease; }
+    .hover-glow:hover { box-shadow: 0 10px 30px rgba(235,42,116,.35), 0 6px 16px rgba(2,6,23,.35); transform: translateY(-2px); }
+    .revealable { opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s cubic-bezier(.22,1,.36,1); }
+    .revealed { opacity: 1; transform: none; }
+    
+    /* Hide scrollbar for horizontal scroll */
+    #recent-samples::-webkit-scrollbar { display: none; }
+    #recent-samples { scrollbar-width: none; -ms-overflow-style: none; }
+    
+    /* Fade effect to indicate more content on desktop only */
+    .samples-container { position: relative; }
+    .samples-container::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 20px;
+      height: 100%;
+      background: linear-gradient(to right, transparent, rgba(248, 250, 252, 0.8));
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    @media (min-width: 640px) {
+      .samples-container::after { opacity: 1; }
+    }
+    
+    /* Smooth snap scrolling for mobile carousel */
+    @supports (scroll-snap-type: x mandatory) {
+      #recent-samples {
+        scroll-snap-type: x mandatory;
+      }
+    }
+  </style>
+  <style>
+    @keyframes fade-in-up {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    
+    @keyframes glow-pulse {
+      0%, 100% {
+        box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+      }
+      50% {
+        box-shadow: 0 0 30px rgba(6, 182, 212, 0.6);
+      }
+    }
+    
+    .animate-fade-in-up {
+      animation: fade-in-up 0.8s ease-out forwards;
+    }
+    
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    .animate-glow-pulse {
+      animation: glow-pulse 2s ease-in-out infinite;
+    }
+    
+    .hover-glow {
+      transition: all 0.3s ease;
+    }
+    
+    .hover-glow:hover {
+      transform: scale(1.02);
+      box-shadow: 0 20px 40px rgba(6, 182, 212, 0.3);
+    }
+    
+    /* Stagger animation delays for cards */
+    .animate-fade-in-up:nth-child(1) { animation-delay: 0.1s; }
+    .animate-fade-in-up:nth-child(2) { animation-delay: 0.2s; }
+    .animate-fade-in-up:nth-child(3) { animation-delay: 0.3s; }
+    .animate-fade-in-up:nth-child(4) { animation-delay: 0.4s; }
+  </style>
+</head>
+<body class="bg-white text-slate-900 font-sans">
+  <!-- Header -->
+  <header class="bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <img src="media/gameframelogo.png" alt="GameFrame Logo" class="h-8 w-auto" loading="eager" fetchpriority="high">
+        <span class="font-bold text-xl tracking-tight bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">GameFrame</span>
+      </a>
+      <nav class="hidden sm:flex items-center gap-6 text-sm opacity-90">
+        <a href="#samples" class="hover:opacity-100 relative group transition-all duration-300">
+          <span class="relative z-10">Samples</span>
+          <span class="absolute inset-0 bg-gradient-to-r from-brand-400/20 to-purple-500/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 -inset-x-2 -inset-y-1"></span>
+        </a>
+        <a href="#options" class="hover:opacity-100 relative group transition-all duration-300">
+          <span class="relative z-10">Design options</span>
+          <span class="absolute inset-0 bg-gradient-to-r from-brand-400/20 to-purple-500/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 -inset-x-2 -inset-y-1"></span>
+        </a>
+        <a href="#faq" class="hover:opacity-100 relative group transition-all duration-300">
+          <span class="relative z-10">FAQ</span>
+          <span class="absolute inset-0 bg-gradient-to-r from-brand-400/20 to-purple-500/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 -inset-x-2 -inset-y-1"></span>
+        </a>
+      </nav>
+      <a href="#order" class="inline-flex items-center justify-center rounded-lg bg-[#F5A623] hover:bg-gradient-to-r hover:from-[#F5A623] hover:to-[#E8941A] px-4 py-2 text-sm font-semibold text-white shadow hover:shadow-lg transition-all duration-300 transform hover:scale-[1.05]">Order Now</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="top" class="relative overflow-hidden bg-slate-900">
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-800/40 via-slate-900 to-slate-900"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
+      <!-- Left: Hero text -->
+      <div class="text-white z-10">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">Turn game day photos into <span class="text-brand-200">pro style sports graphics</span></h1>
+        <p class="mt-4 text-white/80 max-w-xl">High resolution digital files ready for sharing, plus professional prints shipped direct to your door.</p>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#order" class="rounded-lg bg-[#F5A623] hover:bg-gradient-to-r hover:from-[#F5A623] hover:to-[#E8941A] px-5 py-3 font-semibold text-white hover:shadow-2xl hover:shadow-orange-500/30 transition-all duration-300 transform hover:scale-[1.05] hover:-translate-y-1">Start Your Order</a>
+          <a href="#samples" class="rounded-xl border border-white/20 px-5 py-3 font-semibold text-white hover:bg-white/10">See Samples</a>
+        </div>
+      </div>
+
+      <!-- Right: Hero Image -->
+      <div class="relative z-10">
+        <div class="rounded-lg overflow-hidden bg-white/10 ring-1 ring-white/10 h-80 sm:h-96 lg:h-[28rem] relative shadow-2xl shadow-brand-500/30" style="box-shadow: 0 0 40px rgba(6, 182, 212, 0.4), 0 0 80px rgba(6, 182, 212, 0.2), 0 10px 30px rgba(0, 0, 0, 0.3);">
+          <img src="media/heroimage.png" alt="Sports card sample" class="w-full h-full object-cover object-center hover-glow" loading="eager" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- End Hero -->
+
+  <!-- Samples -->
+  <section id="samples" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <h2 class="text-2xl sm:text-3xl font-bold text-center">Recent Samples</h2>
+    
+    <!-- Mobile scroll hint -->
+    <div class="text-center mb-6 mt-4 sm:hidden">
+      <p class="text-slate-600 text-sm flex items-center justify-center gap-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
+        </svg>
+        Swipe to see more samples
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </p>
+    </div>
+    
+    <div class="mt-6 samples-container relative">
+      <!-- Left scroll arrow for desktop -->
+      <button id="samples-scroll-left" class="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/90 hover:bg-white shadow-lg rounded-full items-center justify-center transition-all duration-300 opacity-0" aria-label="Scroll left">
+        <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      
+      <!-- Right scroll arrow for desktop -->
+      <button id="samples-scroll-right" class="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/90 hover:bg-white shadow-lg rounded-full items-center justify-center transition-all duration-300" aria-label="Scroll right">
+        <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </button>
+      
+      <!-- Mobile: Full-width carousel -->
+      <div id="recent-samples" class="flex gap-4 overflow-x-auto pb-4 sm:flex-wrap sm:justify-center sm:overflow-visible sm:pb-0 sm:gap-6 snap-x snap-mandatory" style="-webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
+        <!-- Recent samples will be loaded here by JavaScript -->
+      </div>
+    </div>
+    
+    <!-- Portfolio Button -->
+    <div class="mt-8 text-center">
+      <a href="portfolio.html" class="inline-flex items-center justify-center rounded-lg bg-[#F5A623] hover:bg-gradient-to-r hover:from-[#F5A623] hover:to-[#E8941A] text-white px-6 py-3 font-semibold shadow-lg hover:shadow-xl hover:shadow-orange-500/30 transition-all duration-300">
+        View FULL Portfolio
+        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!--
+  Instagram Section - Commented out for now
+  <section class="relative overflow-hidden">
+    <div class="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
+        
+        Left Side - Instagram Info with Gradient Background
+        <div class="bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 p-8 lg:p-16 text-white relative flex items-center justify-center">
+          Slanted Divider with Drop Shadow - Hidden on mobile
+          <div class="hidden lg:block absolute top-0 right-0 w-32 h-full bg-white transform skew-x-12 translate-x-16" style="filter: drop-shadow(-4px 0px 8px rgba(0, 0, 0, 0.3));"></div>
+          
+          <div class="relative z-10 max-w-lg mx-auto text-center lg:text-left">
+            <div class="flex flex-col sm:flex-row lg:flex-row items-center justify-center lg:justify-start mb-6">
+              <svg class="w-10 h-10 sm:w-12 sm:h-12 mb-3 sm:mb-0 sm:mr-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.40s-.644-1.44-1.439-1.40z"/>
+              </svg>
+              <h2 class="text-2xl sm:text-3xl font-bold">@gameframedesigns</h2>
+            </div>
+            
+            <p class="text-base sm:text-lg text-white/90 mb-6 sm:mb-8 leading-relaxed px-4 sm:px-0">
+              Follow us for daily inspiration, behind-the-scenes content, and the latest custom graphics! 
+              Get exclusive sneak peeks of our newest designs and see your favorite sports stars come to life.
+            </p>
+            
+            <div class="flex justify-center lg:justify-start">
+              <a href="https://www.instagram.com/gameframedesigns/" target="_blank" 
+                class="inline-flex items-center justify-center bg-white text-purple-600 hover:bg-gray-100 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.40s-.644-1.44-1.439-1.40z"/>
+                </svg>
+                Follow Us
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        Right Side - Clean White Background with SnapWidget
+        <div class="bg-white p-8 lg:p-16 flex flex-col justify-center items-center relative z-20">
+          <div class="text-center mb-8">
+            Instagram Feed Placeholder
+            <div class="w-full bg-gray-100 rounded-lg p-8 text-gray-500">
+              <p class="text-lg">Instagram feed coming soon...</p>
+            </div>
+          </div>
+          
+          Instagram Button
+          <div class="text-center">
+            <a href="https://www.instagram.com/gameframedesigns/" target="_blank" 
+              class="inline-flex items-center justify-center bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 hover:from-purple-700 hover:via-pink-700 hover:to-orange-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.40s-.644-1.44-1.439-1.40z"/>
+              </svg>
+              View Full Feed
+            </a>
+          </div>
+        </div>
+    </div>
+  </section>
+  -->  
+  <!-- Package Options -->
+  <section id="options" class="bg-gradient-to-br from-slate-900 via-brand-900 to-brand-800 text-white py-16 lg:py-20 border-t">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Choose Your Package 📦</h2>
+        <p class="text-lg text-brand-100 max-w-3xl mx-auto">Professional sports card designs available in multiple formats. Each package includes one custom design with one revision included.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
+        
+        <!-- Digital Copy -->
+        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 hover:scale-[1.05] hover:-translate-y-2 border border-blue-200/50 relative group animate-fade-in-up">
+          <div class="absolute top-4 left-1/2 -translate-x-1/2">
+            <span class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg group-hover:scale-110 transition-transform duration-300">Digital</span>
+          </div>
+          <div class="flex items-start gap-6 mt-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:rotate-6 group-hover:scale-110 transition-all duration-300">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-xl font-bold text-slate-900">📱 Hi-Res Digital Copy</h3>
+                <span class="text-2xl font-bold text-blue-600">$35</span>
+              </div>
+              <p class="text-slate-600 mb-4">High-resolution digital file only</p>
+              <ul class="text-sm text-slate-600 space-y-1 mb-6">
+                <li>• Social media posts & stories</li>
+                <li>• Digital wallpapers</li>
+                <li>• Profile headers & avatars</li>
+                <li>• Online sharing & display</li>
+              </ul>
+              <a href="#order" class="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 px-6 py-3 font-semibold text-white shadow-lg hover:shadow-xl hover:shadow-blue-500/30 transition-all duration-300 transform hover:scale-[1.05] w-full">
+                Get Yours
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 16x20 Print -->
+        <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:shadow-green-500/25 transition-all duration-500 hover:scale-[1.05] hover:-translate-y-2 border border-green-200/50 relative group animate-fade-in-up">
+          <div class="absolute top-4 left-1/2 -translate-x-1/2">
+            <span class="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg group-hover:scale-110 transition-transform duration-300">Most Popular</span>
+          </div>
+          <div class="flex items-start gap-6 mt-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-gradient-to-br from-green-500 via-teal-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:rotate-6 group-hover:scale-110 transition-all duration-300">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-xl font-bold text-slate-900">🖼️ 16×20 Print</h3>
+                <span class="text-2xl font-bold text-green-600">$60</span>
+              </div>
+              <p class="text-slate-600 mb-4">Professional poster + digital copy</p>
+              <ul class="text-sm text-slate-600 space-y-1 mb-6">
+                <li>• Satin or matte finish</li>
+                <li>• Perfect for framing</li>
+                <li>• Direct shipping included</li>
+                <li>• 3-5 days after approval</li>
+              </ul>
+              <a href="#order" class="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 px-6 py-3 font-semibold text-white shadow-lg hover:shadow-xl hover:shadow-green-500/30 transition-all duration-300 transform hover:scale-[1.05] w-full">
+                Get Yours
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 18x24 Print -->
+        <div class="bg-gradient-to-br from-purple-50 to-violet-50 rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-500 hover:scale-[1.05] hover:-translate-y-2 border border-purple-200/50 relative group animate-fade-in-up">
+          <div class="absolute top-4 left-1/2 -translate-x-1/2">
+            <span class="bg-gradient-to-r from-purple-500 to-violet-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg group-hover:scale-110 transition-transform duration-300">Premium Size</span>
+          </div>
+          <div class="flex items-start gap-6 mt-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-gradient-to-br from-purple-500 via-pink-500 to-violet-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:rotate-6 group-hover:scale-110 transition-all duration-300">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-xl font-bold text-slate-900">🎨 20×30 Print</h3>
+                <span class="text-2xl font-bold text-purple-600">$70</span>
+              </div>
+              <p class="text-slate-600 mb-4">Large format print + digital copy</p>
+              <ul class="text-sm text-slate-600 space-y-1 mb-6">
+                <li>• Premium satin finish</li>
+                <li>• Large display size</li>
+                <li>• Direct shipping included</li>
+                <li>• 3-5 days after approval</li>
+              </ul>
+              <a href="#order" class="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 px-6 py-3 font-semibold text-white shadow-lg hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300 transform hover:scale-[1.05] w-full">
+                Get Yours
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 24x36 Print -->
+        <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:shadow-orange-500/25 transition-all duration-500 hover:scale-[1.05] hover:-translate-y-2 border border-orange-200/50 relative group animate-fade-in-up">
+          <div class="absolute top-4 left-1/2 -translate-x-1/2">
+            <span class="bg-gradient-to-r from-orange-500 to-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg group-hover:scale-110 transition-transform duration-300">Premium</span>
+          </div>
+          <div class="flex items-start gap-6 mt-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-gradient-to-br from-orange-500 via-pink-500 to-red-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:rotate-6 group-hover:scale-110 transition-all duration-300">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-xl font-bold text-slate-900">⭐ 24×36 Print</h3>
+                <span class="text-2xl font-bold text-orange-600">$80</span>
+              </div>
+              <p class="text-slate-600 mb-4">Statement-size premium print + digital copy</p>
+              <ul class="text-sm text-slate-600 space-y-1 mb-6">
+                <li>• Satin or matte finish</li>
+                <li>• Large statement piece</li>
+                <li>• Direct shipping included</li>
+                <li>• 5-7 days after approval</li>
+              </ul>
+              <a href="#order" class="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 px-6 py-3 font-semibold text-white shadow-lg hover:shadow-xl hover:shadow-orange-500/30 transition-all duration-300 transform hover:scale-[1.05] w-full">
+                Get Yours
+              </a>
+            </div>
+          </div>
+                <li>• Direct shipping included</li>
+                <li>• 3-5 days after approval</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Custom Options -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-white/20 max-w-4xl mx-auto">
+        <div class="text-center">
+          <h3 class="text-2xl font-bold text-white mb-4">🤔 Need Something Different?</h3>
+          <p class="text-brand-100 mb-6 max-w-2xl mx-auto">Looking for custom sizes, team photos, social media content partnerships, or something unique? We also offer magnets, mugs, stationery, phone cases, and more! Let's chat about creating the perfect solution for your needs.</p>
+          <a href="https://m.me/AlexJStaples" target="_blank" class="inline-flex items-center justify-center rounded-xl bg-white text-slate-900 hover:bg-brand-100 px-6 py-3 font-semibold shadow hover:shadow-lg transition-all duration-200">
+            Contact for Custom Quote
+          </a>
+        </div>
+      </div>
+
+      <!-- Fine Print -->
+      <div class="mt-8 text-center">
+        <p class="text-sm text-brand-200 max-w-3xl mx-auto">
+          <strong>Note:</strong> Better quality source photos are required for larger prints due to resolution scaling. For best results on 20×30 and 24×36 prints, please provide high-resolution images with good lighting and clarity.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Order Form -->
+  <section id="order" class="relative overflow-hidden" style="background: linear-gradient(135deg, #93c5fd 0%, #c4b5fd 50%, #f9a8d4 100%) !important; background-color: #93c5fd !important;">
+    
+    <div class="text-center py-6 relative z-10">
+      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Start Your Order 🚀</h2>
+      <p class="text-lg text-slate-600 max-w-3xl mx-auto mb-6">Ready to create your custom sports graphic?</p>
+      
+      <!-- Toggle Button -->
+      <button 
+        id="orderFormToggle" 
+        onclick="toggleOrderForm()"
+        class="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-[#F5A623] to-[#E8941A] hover:from-[#E8941A] hover:to-[#D68411] px-8 py-4 font-bold text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-xl"
+      >
+        <span id="toggleText">Open Order Form</span>
+        <svg id="toggleIcon" class="w-6 h-6 ml-3 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Form Container -->
+    <div id="orderFormContainer" class="relative z-10 overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0">
+      <div class="pb-8">
+        <iframe data-tally-src="https://tally.so/embed/KYz0rD?hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="1460" frameborder="0" marginheight="0" marginwidth="0" title="Order Your Custom Design"></iframe>
+        <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function toggleOrderForm() {
+      const container = document.getElementById('orderFormContainer');
+      const toggleText = document.getElementById('toggleText');
+      const toggleIcon = document.getElementById('toggleIcon');
+      
+      const isOpen = container.style.maxHeight && container.style.maxHeight !== '0px';
+      
+      if (isOpen) {
+        // Close form
+        container.style.maxHeight = '0px';
+        container.style.opacity = '0';
+        toggleText.textContent = 'Open Order Form';
+        toggleIcon.style.transform = 'rotate(0deg)';
+      } else {
+        // Open form - use a much larger height to accommodate dynamic content
+        container.style.maxHeight = '2500px';
+        container.style.opacity = '1';
+        toggleText.textContent = 'Close Order Form';
+        toggleIcon.style.transform = 'rotate(180deg)';
+      }
+    }
+  </script>
+
+  <!-- Why Buy Here Section -->
+  <section class="bg-gradient-to-br from-brand-50 to-brand-100 py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Why Buy Here? 🏆</h2>
+        <p class="text-lg text-slate-600 max-w-3xl mx-auto">Experience the difference with GameFrame's commitment to quality, creativity, and customer satisfaction.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        
+        <!-- Unique Designs -->
+        <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 hover:scale-[1.03] hover:-translate-y-1 border border-brand-200/50 group animate-fade-in-up">
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-gradient-to-br from-purple-500 via-pink-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:rotate-12 group-hover:scale-110 transition-all duration-300">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014.846 21H9.154a3.374 3.374 0 00-2.869-1.363l-.548-.547z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-3">🎨 Completely Unique Designs</h3>
+              <p class="text-slate-600 leading-relaxed">One-of-a-kind inspired designs crafted just for you. <strong>No AI, no templates</strong> — every card is hand-designed with creativity and personal touch to capture your athlete's unique spirit.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fair Pricing -->
+        <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:shadow-green-500/20 transition-all duration-500 hover:scale-[1.03] hover:-translate-y-1 border border-brand-200/50 group animate-fade-in-up">
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-gradient-to-br from-green-500 via-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:rotate-12 group-hover:scale-110 transition-all duration-300">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-3">💰 Fair Pricing</h3>
+              <p class="text-slate-600 leading-relaxed">Transparent, honest pricing for premium custom design work. You get professional-quality sports graphics without the premium agency markup — just fair value for exceptional creativity.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Eco-Friendly -->
+        <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 hover:scale-[1.03] hover:-translate-y-1 border border-brand-200/50 group animate-fade-in-up">
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-gradient-to-br from-green-400 via-teal-500 to-blue-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:rotate-12 group-hover:scale-110 transition-all duration-300">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-3">🌱 Eco-Friendly Shipping</h3>
+              <p class="text-slate-600 leading-relaxed">Reduce your carbon footprint! <strong>Designs are printed local to you</strong> through our network of quality print partners, minimizing shipping distances and environmental impact.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Satisfaction Guarantee -->
+        <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:shadow-indigo-500/20 transition-all duration-500 hover:scale-[1.03] hover:-translate-y-1 border border-brand-200/50 group animate-fade-in-up">
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-gradient-to-br from-blue-500 via-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:rotate-12 group-hover:scale-110 transition-all duration-300">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-3">✅ Satisfaction Guarantee</h3>
+              <p class="text-slate-600 leading-relaxed"><strong>Money back if you're not happy</strong> with your design. Your satisfaction is my priority — if the final result doesn't exceed your expectations, I'll make it right or refund you completely.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Process -->
+  <section class="bg-gradient-to-br from-slate-50 to-gray-100 py-16 lg:py-20 relative">
+    <!-- Colorful Pattern -->
+    <div class="absolute inset-0 opacity-8">
+      <div class="absolute top-10 left-10 w-32 h-32 bg-blue-200 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-20 right-20 w-40 h-40 bg-green-200 rounded-full blur-3xl"></div>
+      <div class="absolute top-1/3 right-1/4 w-36 h-36 bg-purple-200 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 left-1/3 w-28 h-28 bg-orange-200 rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">How It Works 🚀</h2>
+        <p class="text-lg text-slate-600 max-w-3xl mx-auto">From order to delivery, here's your complete journey to getting amazing custom sports graphics</p>
+      </div>
+
+      <!-- Process Flow -->
+      <div class="relative">
+        <!-- Vibrant Flow Line -->
+        <div class="hidden lg:block absolute top-20 left-0 right-0 h-2 rounded-full shadow-lg" style="background: linear-gradient(to right, #3b82f6 0%, #10b981 25%, #8b5cf6 50%, #f97316 75%, #06b6d4 100%);"></div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-4">
+          
+          <!-- Step 1: Choose Package -->
+          <div class="text-center group animate-fade-in-up">
+            <div class="relative mb-6">
+              <div class="w-20 h-20 bg-gradient-to-br from-blue-500 via-blue-600 to-indigo-600 rounded-full flex items-center justify-center mx-auto shadow-xl shadow-blue-500/40 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 relative z-10 border-2 border-white">
+                <span class="text-3xl">📦</span>
+              </div>
+              <div class="absolute -top-1 -left-1 w-8 h-8 bg-gradient-to-br from-blue-400 to-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg border-2 border-white">1</div>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Choose Package</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">Pick your perfect size and format from our four package options</p>
+          </div>
+
+          <!-- Step 2: Submit Order -->
+          <div class="text-center group animate-fade-in-up">
+            <div class="relative mb-6">
+              <div class="w-20 h-20 bg-gradient-to-br from-green-500 via-emerald-600 to-teal-600 rounded-full flex items-center justify-center mx-auto shadow-xl shadow-green-500/40 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 relative z-10 border-2 border-white">
+                <span class="text-3xl">📝</span>
+              </div>
+              <div class="absolute -top-1 -left-1 w-8 h-8 bg-gradient-to-br from-green-400 to-green-600 text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg border-2 border-white">2</div>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Submit & Pay</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">Fill out form, upload images, and pay securely with:</p>
+            <div class="flex justify-center gap-3">
+              <!-- Venmo -->
+              <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center shadow-lg shadow-blue-600/40 hover:scale-110 transition-transform duration-200 border border-white" title="Venmo">
+                <span class="text-white text-lg font-bold">V</span>
+              </div>
+              
+              <!-- Cash App -->
+              <div class="w-10 h-10 bg-gradient-to-br from-green-600 to-green-700 rounded-full flex items-center justify-center shadow-lg shadow-green-600/40 hover:scale-110 transition-transform duration-200 border border-white" title="Cash App">
+                <span class="text-white text-xl font-bold">$</span>
+              </div>
+              
+              <!-- PayPal -->
+              <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/40 hover:scale-110 transition-transform duration-200 border border-white" title="PayPal">
+                <span class="text-white text-lg font-bold">P</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: Review Draft -->
+          <div class="text-center group animate-fade-in-up">
+            <div class="relative mb-6">
+              <div class="w-20 h-20 bg-gradient-to-br from-purple-500 via-violet-600 to-purple-700 rounded-full flex items-center justify-center mx-auto shadow-xl shadow-purple-500/40 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 relative z-10 border-2 border-white">
+                <span class="text-3xl">👀</span>
+              </div>
+              <div class="absolute -top-1 -left-1 w-8 h-8 bg-gradient-to-br from-purple-400 to-purple-600 text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg border-2 border-white">3</div>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Review Draft</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">Get watermarked preview within 2-3 days. Approve or request revisions</p>
+          </div>
+
+          <!-- Step 4: Revisions -->
+          <div class="text-center group animate-fade-in-up">
+            <div class="relative mb-6">
+              <div class="w-20 h-20 bg-gradient-to-br from-orange-500 via-red-500 to-pink-600 rounded-full flex items-center justify-center mx-auto shadow-xl shadow-orange-500/40 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 relative z-10 border-2 border-white">
+                <span class="text-3xl">✏️</span>
+              </div>
+              <div class="absolute -top-1 -left-1 w-8 h-8 bg-gradient-to-br from-orange-400 to-orange-600 text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg border-2 border-white">4</div>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Perfect It</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">Minor revisions take just 1 day. We'll keep perfecting until you love it!</p>
+          </div>
+
+          <!-- Step 5: Delivery -->
+          <div class="text-center group animate-fade-in-up">
+            <div class="relative mb-6">
+              <div class="w-20 h-20 bg-gradient-to-br from-brand-500 via-brand-600 to-cyan-600 rounded-full flex items-center justify-center mx-auto shadow-xl shadow-brand-500/40 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 relative z-10 border-2 border-white">
+                <span class="text-3xl">🚚</span>
+              </div>
+              <div class="absolute -top-1 -left-1 w-8 h-8 bg-gradient-to-br from-brand-400 to-brand-600 text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg border-2 border-white">5</div>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Get Your Cards</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">Digital copy instantly. Prints ship same day as approval directly to you</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me -->
+  <section id="about" class="bg-gradient-to-br from-slate-800 via-slate-900 to-brand-900 py-12 lg:py-16 relative overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute top-10 left-10 w-32 h-32 bg-brand-400 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-10 w-40 h-40 bg-brand-500 rounded-full blur-3xl"></div>
+      <div class="absolute top-1/2 left-1/2 w-60 h-60 bg-brand-600 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="grid lg:grid-cols-5 gap-4 lg:gap-6 items-center">
+        <!-- Left: Image -->
+        <div class="lg:col-span-1 flex justify-center lg:justify-start">
+          <div class="relative">
+            <div class="absolute inset-0 bg-gradient-to-br from-brand-400 to-brand-600 rounded-full blur-xl opacity-60 scale-125"></div>
+            <img src="media/aboutme.png" alt="Alex - GameFrame Creator" class="relative w-32 h-32 lg:w-40 lg:h-40 object-cover rounded-full shadow-2xl border-4 border-brand-400 hover-glow animate-float" style="box-shadow: 0 25px 50px rgba(6, 182, 212, 0.4), 0 10px 25px rgba(6, 182, 212, 0.2);" />
+          </div>
+        </div>
+        
+        <!-- Right: Quote -->
+        <div class="lg:col-span-4 text-center lg:text-left">
+          <div class="relative">
+            <div class="absolute -top-4 -left-4 text-6xl text-brand-400/40 font-serif leading-none">"</div>
+            <blockquote class="text-lg lg:text-xl italic font-light text-slate-100 leading-relaxed relative z-10 pl-8 pr-8">
+              Hey, I'm Alex. I was <strong class="text-brand-300">sick</strong> of paying <strong class="text-brand-300">top dollar</strong> to fancy photographers for mid quality images that we stuck to the fridge and <strong class="text-brand-300">never looked at again</strong>. Truth is, we all carry <strong class="text-brand-300">professional grade camera equipment</strong> with us everyday. Our phones. I started making these cool cards as a hobby. It's <strong class="text-brand-300">fun</strong>, <strong class="text-brand-300">creative</strong>, and the outcome is actually something that my kid <strong class="text-brand-300">loves</strong>. So if you want a basic smile picture that you can share with grandma go ahead with the photographer, but if you want something <strong class="text-brand-300">awesome</strong> that you can <strong class="text-brand-300">turn into anything you want</strong> PLUS your kid will <strong class="text-brand-300">love it</strong>... get a <strong class="text-brand-300">GameFrame</strong>
+            </blockquote>
+            <div class="absolute -bottom-8 -right-2 text-6xl text-brand-400/40 font-serif leading-none">"</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+      <p class="text-slate-600 text-lg max-w-2xl mx-auto">Quick answers to common questions</p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 gap-6">
+      <details class="rounded-2xl border bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+        <summary class="font-semibold text-lg cursor-pointer text-slate-800 mb-2">What kind of photos work best?</summary>
+        <p class="text-slate-700">High-quality, well-lit photos where the athlete is clearly visible. Phone photos are perfectly fine! Action shots or posed photos work great - just avoid heavily blurred or dark images.</p>
+      </details>
+      
+      <details class="rounded-2xl border bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+        <summary class="font-semibold text-lg cursor-pointer text-slate-800 mb-2">How long does it take?</summary>
+        <p class="text-slate-700">Most designs are completed within 3-5 business days. You'll receive both high-resolution digital files and physical cards shipped to your door.</p>
+      </details>
+      
+      <details class="rounded-2xl border bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+        <summary class="font-semibold text-lg cursor-pointer text-slate-800 mb-2">Can I request changes?</summary>
+        <p class="text-slate-700">Yes! One round of revisions is included with every order. We'll work with you to make sure you love your sports card design.</p>
+      </details>
+      
+      <details class="rounded-2xl border bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+        <summary class="font-semibold text-lg cursor-pointer text-slate-800 mb-2">What sports do you cover?</summary>
+        <p class="text-slate-700">All sports! Baseball, basketball, football, soccer, hockey, tennis, wrestling, gymnastics, and more. Each design is customized for the specific sport and team.</p>
+      </details>
+      
+      <details class="rounded-2xl border bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+        <summary class="font-semibold text-lg cursor-pointer text-slate-800 mb-2">Do you offer team discounts?</summary>
+        <p class="text-slate-700">Yes! We offer special pricing for team orders of 10+ players. Contact us directly for custom team packages and bulk pricing.</p>
+      </details>
+      
+      <details class="rounded-2xl border bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+        <summary class="font-semibold text-lg cursor-pointer text-slate-800 mb-2">What if I'm not satisfied?</summary>
+        <p class="text-slate-700">Your satisfaction is guaranteed! We'll work with you until you love your design, or provide a full refund if we can't meet your expectations.</p>
+      </details>
+    </div>
+    
+    <div class="mt-10 text-center">
+      <div class="bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl p-6 border">
+        <h3 class="text-lg font-semibold mb-2">More questions?</h3>
+        <p class="text-slate-600 mb-4">Feel free to reach out - we're here to help!</p>
+        <a href="https://m.me/AlexJStaples" target="_blank" class="inline-flex items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 font-medium shadow-lg hover:shadow-xl transition-all duration-300">
+          <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0C5.374 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.626 0 12-4.974 12-11.111C24 4.974 18.626 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.26L19.732 8l-6.541 6.963z"/>
+          </svg>
+          Message Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="flex items-center justify-center gap-3 mb-6">
+        <img src="media/gameframelogo.png" alt="GameFrame Logo" class="h-8 w-auto">
+        <span class="font-bold text-xl tracking-tight">GameFrame</span>
+      </div>
+      <p class="text-slate-400 mb-4">Custom sports card designs that capture the magic of game day.</p>
+      <div class="flex justify-center gap-6 text-sm">
+        <a href="portfolio.html" class="hover:text-brand-400 transition-colors">Portfolio</a>
+        <a href="#faq" class="hover:text-brand-400 transition-colors">FAQ</a>
+      </div>
+      
+      <!-- Social Media Links -->
+      <div class="flex justify-center gap-4 mt-6">
+        <a href="#" class="w-10 h-10 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-colors duration-300" aria-label="Facebook">
+          <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/gameframedesigns/" target="_blank" class="w-10 h-10 bg-gradient-to-br from-purple-600 via-pink-600 to-orange-400 hover:from-purple-700 hover:via-pink-700 hover:to-orange-500 rounded-full flex items-center justify-center transition-all duration-300" aria-label="Instagram">
+          <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+        <a href="#" class="w-10 h-10 bg-black hover:bg-gray-800 rounded-full flex items-center justify-center transition-colors duration-300" aria-label="TikTok">
+          <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+          </svg>
+        </a>
+      </div>
+      
+      <div class="mt-6 pt-8 border-t border-slate-800 text-slate-500 text-sm">
+        © 2024 GameFrame. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Sample Images Management System
+    // TO ADD NEW SAMPLES: Just add the filename to this array (newest first)
+    const allSamples = [
+      'sample37.png',
+      'sample36.png',
+      'sample35.png',
+      'sample34.png',
+      'sample33.png',
+      'sample32.png',
+      'sample31.png',
+      'sample30.png',
+      'sample29.png',
+      'sample28.png',
+      'sample27.png',
+      'sample26.png',
+      'sample25.png',
+      'sample24.png',
+      'sample23.png',
+      'sample22.png',
+      'sample21.png',
+      'sample20.png',
+      'sample19.png',
+      'sample18.png',
+      'sample17.png',
+      'sample16.png',
+      'sample15.png',
+      'sample14.png',
+      'sample13.png',
+      'sample12.png',
+      'sample11.png',
+      'sample10.png',
+      'sample9.png',
+      'sample8.png',
+      'sample7.png',
+      'sample6.png',
+      'sample5.png',
+      'sample4.png', 
+      'sample3.png',
+      'sample2.png',
+      'sample1.png'
+      // Add new samples here at the top, like:
+      // 'sample24.png',
+    ];
+
+    // Configuration
+    const maxRecentSamples = 5; // How many samples to show on main page
+
+    // Load recent samples for main page
+    function loadRecentSamples() {
+      const container = document.getElementById('recent-samples');
+      if (!container) return;
+      
+      const recentSamples = allSamples.slice(0, maxRecentSamples);
+      
+      // Create images once - no infinite loop
+      recentSamples.forEach((filename, index) => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'relative';
+        
+        const img = document.createElement('img');
+        img.src = `media/${filename}`;
+        img.alt = `Sample ${index + 1}`;
+        img.className = 'w-[calc(100vw-2rem)] max-w-sm sm:w-56 flex-shrink-0 snap-center object-contain transition-transform duration-500 sm:hover:scale-[1.03] hover:shadow-2xl hover:shadow-brand-500/30 rounded-2xl shadow border border-slate-200/60';
+        img.loading = index < 5 ? 'eager' : 'lazy';
+        img.decoding = 'async';
+        img.fetchPriority = index < 3 ? 'high' : 'low';
+        
+        wrapper.appendChild(img);
+        container.appendChild(wrapper);
+      });
+    }
+
+    // Initialize when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      loadRecentSamples();
+      setupSamplesScrollArrows();
+      
+      // Intersection Observer for animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      document.querySelectorAll('.revealable').forEach(el => {
+        observer.observe(el);
+      });
+    });
+
+    
+    // Setup scroll arrows for recent samples
+    function setupSamplesScrollArrows() {
+      const gallery = document.getElementById('recent-samples');
+      const leftBtn = document.getElementById('samples-scroll-left');
+      const rightBtn = document.getElementById('samples-scroll-right');
+      
+      if (!gallery || !leftBtn || !rightBtn) return;
+      
+      // Show/hide arrows based on scroll position
+      function updateArrowVisibility() {
+        const { scrollLeft, scrollWidth, clientWidth } = gallery;
+        leftBtn.style.opacity = scrollLeft > 0 ? '1' : '0';
+        rightBtn.style.opacity = scrollLeft < scrollWidth - clientWidth - 10 ? '1' : '0';
+      }
+      
+      // Scroll functionality
+      leftBtn.addEventListener('click', () => {
+        gallery.scrollBy({ left: -300, behavior: 'smooth' });
+      });
+      
+      rightBtn.addEventListener('click', () => {
+        gallery.scrollBy({ left: 300, behavior: 'smooth' });
+      });
+      
+      // Update arrow visibility on scroll
+      gallery.addEventListener('scroll', updateArrowVisibility);
+      
+      // Initial arrow visibility update
+      setTimeout(updateArrowVisibility, 100);
+    }
+  </script>
+
+  <!-- Sticky Facebook Messenger Button -->
+  <div id="messenger-container" class="fixed bottom-6 right-6 z-50 transition-all duration-300 cursor-move" style="touch-action: none;">
+    <a href="https://m.me/AlexJStaples" target="_blank" id="messenger-button" class="group flex items-center justify-center w-14 h-14 bg-blue-600 hover:bg-blue-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110" aria-label="Message us on Facebook">
+      <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 0C5.374 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.626 0 12-4.974 12-11.111C24 4.974 18.626 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.26L19.732 8l-6.541 6.963z"/>
+      </svg>
+      
+      <!-- Tooltip -->
+      <div class="absolute right-full mr-3 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+        <div class="bg-slate-800 text-white text-sm px-3 py-2 rounded-lg whitespace-nowrap shadow-lg">
+          Message me directly!
+          <div class="absolute left-full top-1/2 -translate-y-1/2 w-0 h-0 border-l-4 border-l-slate-800 border-y-4 border-y-transparent"></div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Messenger Drag & Auto-hide Script -->
+  <script>
+    (function() {
+      const container = document.getElementById('messenger-container');
+      const button = document.getElementById('messenger-button');
+      let isDragging = false;
+      let hasDragged = false;
+      let dragStartY = 0;
+      let containerStartY = 0;
+      let hideTimer = null;
+      let isHidden = false;
+      let startTime = 0;
+      
+      // Auto-hide functionality
+      function resetHideTimer() {
+        clearTimeout(hideTimer);
+        if (isHidden) {
+          showMessenger();
+        }
+        hideTimer = setTimeout(hideMessenger, 60000); // Hide after 1 minute
+      }
+      
+      function hideMessenger() {
+        if (!isDragging) {
+          container.style.transform = 'translateX(calc(100% - 16px))';
+          container.style.opacity = '0.7';
+          isHidden = true;
+        }
+      }
+      
+      function showMessenger() {
+        container.style.transform = 'translateX(0)';
+        container.style.opacity = '1';
+        isHidden = false;
+      }
+      
+      // Drag functionality
+      function handleStart(e) {
+        isDragging = true;
+        hasDragged = false;
+        startTime = Date.now();
+        container.style.transition = 'none';
+        
+        const clientY = e.type.includes('touch') ? e.touches[0].clientY : e.clientY;
+        dragStartY = clientY;
+        
+        const rect = container.getBoundingClientRect();
+        containerStartY = rect.top;
+        
+        resetHideTimer();
+      }
+      
+      function handleMove(e) {
+        if (!isDragging) return;
+        
+        const clientY = e.type.includes('touch') ? e.touches[0].clientY : e.clientY;
+        const deltaY = Math.abs(clientY - dragStartY);
+        
+        // Only start dragging if moved more than 5px
+        if (deltaY > 5) {
+          hasDragged = true;
+          e.preventDefault();
+          
+          const newY = containerStartY + (clientY - dragStartY);
+          
+          // Constrain to viewport bounds
+          const minY = 20; // 20px from top
+          const maxY = window.innerHeight - container.offsetHeight - 20; // 20px from bottom
+          const constrainedY = Math.max(minY, Math.min(maxY, newY));
+          
+          container.style.top = constrainedY + 'px';
+          container.style.bottom = 'auto';
+        }
+      }
+      
+      function handleEnd(e) {
+        if (!isDragging) return;
+        isDragging = false;
+        container.style.transition = 'all 0.3s ease';
+        resetHideTimer();
+        
+        // Store drag state for click prevention
+        if (hasDragged) {
+          window.lastDragEnd = Date.now();
+        }
+      }
+      
+      // Prevent click when dragging
+      button.addEventListener('click', function(e) {
+        // Prevent click if we just finished dragging or if drag was very recent
+        if (hasDragged || (window.lastDragEnd && Date.now() - window.lastDragEnd < 200)) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+      });
+      
+      // Mouse events
+      container.addEventListener('mousedown', handleStart);
+      document.addEventListener('mousemove', handleMove);
+      document.addEventListener('mouseup', handleEnd);
+      
+      // Touch events
+      container.addEventListener('touchstart', handleStart, { passive: true });
+      document.addEventListener('touchmove', handleMove, { passive: false });
+      document.addEventListener('touchend', handleEnd);
+      
+      // Show on hover when hidden
+      container.addEventListener('mouseenter', function() {
+        if (isHidden) {
+          showMessenger();
+          resetHideTimer();
+        }
+      });
+      
+      // Reset timer on any user interaction
+      document.addEventListener('mousemove', resetHideTimer);
+      document.addEventListener('click', resetHideTimer);
+      document.addEventListener('scroll', resetHideTimer);
+      
+      // Initialize timer
+      resetHideTimer();
+    })();
+  </script>
+
+  <!-- Hash Navigation Handler -->
+  <script>
+    // Handle hash navigation when coming from other pages
+    window.addEventListener('load', function() {
+      // Only scroll to hash if there's a referrer (coming from another page)
+      // This prevents auto-scrolling on direct page loads or mobile refreshes
+      if (window.location.hash && document.referrer) {
+        setTimeout(function() {
+          const target = document.querySelector(window.location.hash);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+  </script>
+
+</body>
+</html>
