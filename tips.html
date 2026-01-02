@@ -299,27 +299,30 @@
 
   <script>
     function bookmarkPage() {
+      const homepageUrl = 'https://pixelperfectdesigns.github.io/gameframe-website/';
+      const homepageTitle = 'GameFrame - Custom Sports Graphics Designs';
+      
       if (window.sidebar && window.sidebar.addPanel) {
         // Firefox
-        window.sidebar.addPanel(document.title, window.location.href, "");
+        window.sidebar.addPanel(homepageTitle, homepageUrl, "");
       } else if (window.opera && window.print) {
         // Opera
         var elem = document.createElement('a');
-        elem.setAttribute('href', window.location.href);
-        elem.setAttribute('title', document.title);
+        elem.setAttribute('href', homepageUrl);
+        elem.setAttribute('title', homepageTitle);
         elem.setAttribute('rel', 'sidebar');
         elem.click();
       } else if (document.all) {
         // Internet Explorer
-        window.external.AddFavorite(window.location.href, document.title);
+        window.external.AddFavorite(homepageUrl, homepageTitle);
       } else {
         // Other browsers (Chrome, Safari, etc.)
-        alert('Press Ctrl+D (or Cmd+D on Mac) to bookmark this page!');
+        alert('Press Ctrl+D (or Cmd+D on Mac) to bookmark the homepage!\n\nURL: ' + homepageUrl);
       }
     }
 
     function copyToClipboard() {
-      const homepageUrl = window.location.origin + '/index.html';
+      const homepageUrl = 'https://pixelperfectdesigns.github.io/gameframe-website/';
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(homepageUrl).then(function() {
           alert('Homepage link copied to clipboard!');
@@ -343,13 +346,13 @@
     }
 
     function shareOnFacebook() {
-      const url = window.location.origin + '/index.html';
+      const url = window.location.origin + '/gameframe-website/index.html';
       const shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
       window.open(shareUrl, '_blank', 'width=600,height=400');
     }
 
     function shareOnTwitter() {
-      const url = window.location.origin + '/index.html';
+      const url = window.location.origin + '/gameframe-website/index.html';
       const text = 'Check out these amazing custom sports graphics!';
       const shareUrl = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(url);
       window.open(shareUrl, '_blank', 'width=600,height=400');
