@@ -105,7 +105,7 @@
         Our <span class="bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent">Portfolio</span>
       </h1>
       <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-        Explore our collection of custom sports graphics and posters. Each design is crafted to capture the pride and excitement of your young athlete's achievements.
+        Explore our collection of custom sports graphics, posters, and LED backlit signs. Each design is crafted to capture the pride and excitement of your young athlete's achievements.
       </p>
       
       <!-- Quick Stats -->
@@ -139,11 +139,11 @@
         Ready to Create Your Custom Sports Graphic?
       </h2>
       <p class="text-xl text-primary-100 mb-8">
-        Transform your athlete's photos into professional graphics in just 3-5 days
+        Transform your athlete's photos into professional graphics or illuminated LED signs in just 3-5 days
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="index.html#order" class="bg-white text-primary-600 px-8 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center">
-          Order Now — $35
+          Order Now — $35-$90
         </a>
         <a href="index.html#pricing" class="border-2 border-white text-white hover:bg-white hover:text-primary-600 px-8 py-3 rounded-xl font-semibold transition-colors inline-flex items-center justify-center">
           View Pricing
@@ -162,7 +162,15 @@
         <button class="filter-btn" data-filter="football">Football</button>
         <button class="filter-btn" data-filter="hockey">Hockey</button>
         <button class="filter-btn" data-filter="softball">Softball</button>
+        <button class="filter-btn" data-filter="led-signs" style="background: linear-gradient(135deg, #ea580c, #dc2626); color: white; position: relative;">
+          LED Signs
+          <span style="position: absolute; top: -8px; right: -8px; background: #fbbf24; color: #92400e; font-size: 10px; font-weight: bold; padding: 1px 4px; border-radius: 8px;">NEW</span>
+        </button>
         <button class="filter-btn" data-filter="team-photos" id="team-photos-btn">Team Photos</button>
+        <button class="filter-btn" data-filter="led-signs" style="background: linear-gradient(135deg, #ea580c, #dc2626); color: white; position: relative;">
+          LED Signs
+          <span style="position: absolute; top: -8px; right: -8px; background: #fbbf24; color: #92400e; font-size: 10px; font-weight: bold; padding: 1px 4px; border-radius: 8px;">NEW</span>
+        </button>
         <button class="filter-btn" data-filter="other">Other Sports</button>
       </div>
       
@@ -477,6 +485,10 @@
   <script>
     // Auto-generate portfolio from your existing images
     const portfolioImages = [
+      'LEDsample-1.png',
+      'LEDsample-2.png', 
+      'LEDsample-3.png',
+      'LEDsample-4.png',
       'sample50-softball.png',
       'sample49-baseball.png',
       'sample48-softball.png',
@@ -545,6 +557,13 @@
       // 'team-warriors-02.png', 
       // 'team-eagles-01.png',
       // 'team-eagles-02.png'
+      
+      // LED Signs - use format: 'led-filename-sport.png' or 'led-filename.png'
+      // Examples you can add:
+      // 'led-sample1-baseball.png',
+      // 'led-sample2-basketball.png',
+      // 'led-design3-football.png'
+      
       // Add your images here - use format: 'filename-sport.png'
       // Examples: 'sample1-baseball.png', 'design2-basketball.png', 'player3-hockey.png'
     ];
@@ -553,7 +572,12 @@
     function getSportFromFilename(filename) {
       const validSports = ['baseball', 'basketball', 'football', 'hockey', 'softball'];
       
-      // Check for team photos first (e.g., "team-warriors-01.png")
+      // Check for LED signs first (e.g., "led-sample1-baseball.png", "LEDsample-1.png")
+      if (filename.toLowerCase().includes('led-') || filename.toLowerCase().includes('ledsample-')) {
+        return 'led-signs';
+      }
+      
+      // Check for team photos (e.g., "team-warriors-01.png")
       if (filename.toLowerCase().includes('team-')) {
         return 'team-photos';
       }
