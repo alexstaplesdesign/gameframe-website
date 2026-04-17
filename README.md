@@ -1,5 +1,9 @@
 # GameFrame
 
+**[Live Site →](https://alexstaplesdesign.github.io/gameframe-website/)**
+
+![GameFrame](media/social-preview.png)
+
 Website for GameFrame — a custom sports graphics service for young athletes.
 Customers send a photo, get back a professional-quality sports card, poster,
 or LED sign design in 3–5 days.
