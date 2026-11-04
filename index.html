@@ -1,1201 +1,502 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GameFrame – Custom Sports Graphics Designs</title>
-  <meta name="description" content="Transform your athlete's photos into professional sports graphics in 3-5 days. High-quality digital files and prints." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameFrame — Gameday photos turned into fan gear</title>
+  <meta name="description" content="Send Alex a photo from the game and get back a poster, digital file, custom water bottle, or LED sign your athlete will actually love.">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="media/gameframelogo.png">
-  <link rel="apple-touch-icon" href="media/gameframelogo.png">
+  <link rel="icon" type="image/png" href="media/web/gameframelogo.png">
+  <link rel="apple-touch-icon" href="media/web/gameframelogo.png">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://pixelperfectdesigns.github.io/gameframe-website/" />
-  <meta property="og:title" content="GameFrame – Custom Sports Graphics Designs" />
-  <meta property="og:description" content="Transform your athlete's photos into professional sports graphics in 3-5 days. High-quality digital files and prints." />
-  <meta property="og:image" content="https://pixelperfectdesigns.github.io/gameframe-website/media/social-preview.png" />
+  <meta property="og:url" content="https://alexstaplesdesign.github.io/gameframe-website/" />
+  <meta property="og:title" content="GameFrame — Gameday photos turned into fan gear" />
+  <meta property="og:description" content="Send Alex a photo from the game and get back a poster, digital file, custom water bottle, or LED sign your athlete will actually love." />
+  <meta property="og:image" content="https://alexstaplesdesign.github.io/gameframe-website/media/social-preview.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="GameFrame custom sports graphics design samples" />
 
   <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://pixelperfectdesigns.github.io/gameframe-website/" />
-  <meta property="twitter:title" content="GameFrame – Custom Sports Graphics Designs" />
-  <meta property="twitter:description" content="Transform your athlete's photos into professional sports graphics in 3-5 days. High-quality digital files and prints." />
-  <meta property="twitter:image" content="https://pixelperfectdesigns.github.io/gameframe-website/media/social-preview.png" />
-  <meta property="twitter:image:alt" content="GameFrame custom sports graphics design samples" />
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: {
-              50: '#f0f9ff',
-              100: '#e0f2fe',
-              200: '#bae6fd',
-              300: '#7dd3fc',
-              400: '#38bdf8',
-              500: '#0ea5e9',
-              600: '#0284c7',
-              700: '#0369a1',
-              800: '#075985',
-              900: '#0c4a6e'
-            },
-            accent: {
-              50: '#fdf4ff',
-              100: '#fae8ff',
-              200: '#f5d0fe',
-              300: '#f0abfc',
-              400: '#e879f9',
-              500: '#d946ef',
-              600: '#c026d3',
-              700: '#a21caf',
-              800: '#86198f',
-              900: '#701a75'
-            }
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif']
-          }
-        }
-      }
-    }
-  </script>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="GameFrame — Gameday photos turned into fan gear" />
+  <meta name="twitter:description" content="Send Alex a photo from the game and get back a poster, digital file, custom water bottle, or LED sign your athlete will actually love." />
+  <meta name="twitter:image" content="https://alexstaplesdesign.github.io/gameframe-website/media/social-preview.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,800;112..125,900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
   <style>
-    .gradient-text {
-      background: linear-gradient(135deg, #0ea5e9 0%, #d946ef 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    /* === 1. DESIGN TOKENS (:root) === */
+    :root {
+      --c-bg:        #F2EEE6;
+      --c-surface:   #FBF8F2;
+      --c-surface-2: #E7E1D5;
+      --c-border:    #D6CEBF;
+      --c-border-2:  #0F2430;
+      --c-text:      #0F2430;
+      --c-text-2:    #33495A;
+      --c-text-3:    #52677A;
+      --c-accent:    #0A7A7C;
+      --c-accent-2:  #D83A26;
+      --c-accent-fg: #FBF8F2;
+      --c-ink-shadow: rgba(15, 36, 48, 0.18);
+      --c-ink-shadow-2: rgba(15, 36, 48, 0.08);
+      --c-teal-shadow: rgba(10, 122, 124, 0.28);
+      --grain-opacity: 0.22;
+      /* Hero accent per product, each pulled from its image (all 4.5:1+ on --c-bg) */
+      --c-poster:  #6A3BA8;
+      --c-digital: #C42B2B;
+      --c-bottle:  #A8461A;
+      --c-led:     #1D5FC2;
+
+      --font-display: 'Archivo', 'Arial Black', sans-serif;
+      --font-body:    'DM Sans', 'Segoe UI', sans-serif;
+
+      --text-sm: 0.875rem; --text-base: 1rem; --text-lg: 1.125rem; --text-xl: 1.25rem;
+      --text-2xl: 1.5rem; --text-3xl: 1.875rem; --text-4xl: 2.25rem; --text-5xl: 3rem;
+      --text-6xl: 3.75rem; --text-7xl: 4.5rem; --text-8xl: 6rem;
+
+      --space-1: 0.25rem;  --space-2: 0.5rem;   --space-3: 0.75rem;
+      --space-4: 1rem;     --space-5: 1.25rem;  --space-6: 1.5rem;
+      --space-8: 2rem;     --space-10: 2.5rem;  --space-12: 3rem;
+      --space-16: 4rem;    --space-20: 5rem;    --space-24: 6rem;
+      --space-32: 8rem;
+
+      --radius: 10px;
+      --shadow-1: 0 1px 1px var(--c-ink-shadow-2), 0 4px 10px -4px var(--c-ink-shadow);
+      --shadow-2: 0 1px 2px var(--c-ink-shadow-2), 0 14px 30px -12px var(--c-ink-shadow), 0 30px 60px -30px var(--c-ink-shadow);
+      --shadow-3: 0 2px 4px var(--c-ink-shadow-2), 0 30px 60px -20px var(--c-ink-shadow), 0 50px 100px -40px var(--c-teal-shadow);
+      --ease-elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
+      --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
     }
-    
-    .hover-lift {
-      transition: transform 0.2s ease;
+
+    /* === 2. RESET === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    img, video, svg { max-width: 100%; display: block; }
+    button { cursor: pointer; font: inherit; border: none; background: none; }
+    a { color: inherit; text-decoration: none; }
+    ul, ol { list-style: none; }
+    input, textarea, select { font: inherit; }
+    button, a, input, select, textarea { touch-action: manipulation; }
+
+    /* === 3. BASE / TYPOGRAPHY === */
+    body {
+      background: var(--c-bg);
+      color: var(--c-text);
+      font-family: var(--font-body);
+      font-size: var(--text-lg);
+      line-height: 1.7;
+      overflow-x: hidden;
+      isolation: isolate;
     }
-    
-    .hover-lift:hover {
-      transform: translateY(-2px);
+    /* Card-stock grain: fixed noise layer under all content */
+    body::before {
+      content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.06 0 0 0 0 0.14 0 0 0 0 0.19 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity: var(--grain-opacity);
+      mix-blend-mode: multiply;
     }
-    
-    .glass {
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+    h1, h2, h3, .display {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-stretch: 125%;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+    }
+    p { max-width: 65ch; }
+    .tag {
+      display: inline-block; font-weight: 700; font-size: var(--text-sm);
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--c-accent-2);
+    }
+    :focus-visible { outline: 3px solid var(--c-accent-2); outline-offset: 4px; border-radius: 6px; }
+    .skip { position: absolute; left: -999px; top: var(--space-2); background: var(--c-text); color: var(--c-surface); padding: var(--space-2) var(--space-4); z-index: 100; }
+    .skip:focus { left: var(--space-4); }
+
+    /* === 4. LAYOUT UTILITIES === */
+    .wrap { width: min(1200px, 100% - 2 * var(--space-6)); margin-inline: auto; }
+    section { padding-block: var(--space-20); position: relative; }
+
+    /* === 5. NAVIGATION === */
+    nav { position: fixed; inset: 0 0 auto 0; z-index: 50; padding-block: var(--space-3); }
+    nav::before {
+      content: ""; position: absolute; inset: 0; background: var(--c-bg);
+      box-shadow: 0 1px 0 var(--c-border);
+      opacity: 0; transition: opacity 300ms var(--ease-out);
+    }
+    nav.is-scrolled::before { opacity: 1; }
+    nav .wrap { position: relative; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; align-items: center; gap: var(--space-3); font-size: var(--text-xl); }
+    .brand img { width: 44px; height: 44px; border-radius: 50%; box-shadow: var(--shadow-1); }
+
+    /* === 8. COMPONENTS (pill button used in nav) === */
+    .pill {
+      display: inline-flex; align-items: center; min-height: 44px; padding: var(--space-2) var(--space-5);
+      border-radius: 999px; font-weight: 700; font-size: var(--text-base);
+      background: var(--c-text); color: var(--c-surface);
+      box-shadow: var(--shadow-1);
+      transition: transform 500ms var(--ease-elastic);
+    }
+    .pill:hover { transform: translateY(-2px) rotate(-2deg); }
+    .pill:active { transform: scale(0.96); }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; min-height: 56px; margin-top: var(--space-8);
+      padding: var(--space-3) var(--space-8); border-radius: 12px; border: 3px solid var(--c-text);
+      background: var(--c-accent); color: var(--c-accent-fg); font-weight: 700; font-size: var(--text-lg);
+      box-shadow: 5px 5px 0 var(--c-text); white-space: nowrap;
+      transition: transform 500ms var(--ease-elastic);
+    }
+    .btn:hover { transform: translate(-2px, -2px) rotate(-1deg); }
+    .btn:active { transform: translate(3px, 3px); }
+    /* === 6. HERO === */
+    .hero { padding-top: var(--space-32); padding-bottom: var(--space-16); overflow: hidden; }
+    .hero__grid { display: grid; gap: var(--space-10); justify-items: center; text-align: center; }
+    .hero h1 { font-size: clamp(2.6rem, 10vw, 6.5rem); }
+    /* Accent line takes its color from the product on screen. Two stacked copies crossfade
+       so only opacity animates. */
+    .accent { display: grid; }
+    .accent > span { grid-area: 1 / 1; opacity: 0; transition: opacity 700ms var(--ease-out); }
+    .accent > span.is-on { opacity: 1; }
+    /* Mobile: headline, then the pitch and button, then the card */
+    .hero__copy:last-child { order: 1; }
+    .hero__card { order: 2; }
+    .hero__lede { font-size: var(--text-xl); color: var(--c-text-2); margin-inline: auto; }
+    /* Product showcase: cycles through the four products, edges fade into the page */
+    .show { width: min(440px, 88vw); }
+    .show__stage { position: relative; aspect-ratio: 3 / 4; perspective: 1400px; }
+    .show__flipper {
+      position: absolute; inset: 0; transform-style: preserve-3d;
+      transform: rotateY(var(--turn, 0deg));
+      transition: transform 900ms var(--ease-elastic);
+    }
+    .show__face {
+      position: absolute; inset: 0; overflow: hidden;
+      border-radius: 16px; box-shadow: var(--shadow-3); background: var(--c-surface-2);
+      backface-visibility: hidden; -webkit-backface-visibility: hidden;
+    }
+    .show__face.show__back { transform: rotateY(180deg); }
+    .show__face img, .show__face video { width: 100%; height: 100%; object-fit: cover; }
+    .show__face [hidden] { display: none; }
+    .show__tabs { display: flex; justify-content: center; gap: var(--space-1); flex-wrap: wrap; margin-top: var(--space-2); }
+    .show__tab {
+      min-height: 44px; padding: var(--space-2) var(--space-2); white-space: nowrap;
+      font-family: var(--font-display); font-weight: 900; font-stretch: 112%; text-transform: uppercase;
+      font-size: var(--text-sm); letter-spacing: 0.02em; color: var(--c-text-3);
+      border-bottom: 3px solid transparent;
+      transition: transform 400ms var(--ease-elastic);
+    }
+    .show__tab:hover { transform: translateY(-2px); color: var(--c-text); }
+    .show__tab:active { transform: scale(0.95); }
+    .show__tab[aria-selected="true"] { color: var(--c-text); border-bottom-color: var(--hero-accent, var(--c-poster)); }
+
+    /* === 7. SECTIONS === */
+    .section-head { display: grid; gap: var(--space-3); margin-bottom: var(--space-12); }
+    .section-head h2 { font-size: clamp(2.2rem, 6vw, 4.25rem); }
+
+    /* Deck: cards start stacked, then deal out */
+    .deck { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); }
+    .deck li {
+      border-radius: var(--radius); background: var(--c-surface); padding: 8px; box-shadow: var(--shadow-2);
+      transform: translate(var(--dx, 0), var(--dy, 0)) rotate(var(--r, 0deg));
+      transition: transform 700ms var(--ease-elastic);
+      transition-delay: calc(var(--i) * 70ms);
+    }
+    .deck li img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 6px; }
+    .deck.is-dealt li { --dx: 0px; --dy: 0px; }
+    .deck.is-dealt li:hover { transform: translateY(-8px) rotate(var(--r)); }
+    .deck li:active { transform: scale(0.97); }
+
+    /* Bio */
+    .bio {
+      display: grid; gap: var(--space-8); background: var(--c-surface); border: 3px solid var(--c-text);
+      border-radius: 20px; padding: var(--space-8); box-shadow: 10px 10px 0 var(--c-accent), var(--shadow-2);
+    }
+    .bio__head { display: flex; align-items: center; gap: var(--space-5); }
+    .bio__head img { width: 104px; height: 104px; border-radius: 50%; object-fit: cover; border: 3px solid var(--c-text); }
+    .bio__head h2 { font-size: clamp(2rem, 5vw, 3rem); }
+    .bio p { margin-bottom: var(--space-4); color: var(--c-text-2); }
+    .bio mark { background: linear-gradient(transparent 60%, rgba(216, 58, 38, 0.22) 60%); color: var(--c-text); font-weight: 700; }
+
+    /* Ticket CTA */
+    .final { text-align: center; padding-block: var(--space-24) var(--space-32); }
+    .final h2 { font-size: clamp(2.6rem, 9vw, 6rem); margin-block: var(--space-3) var(--space-6); }
+    .final p { margin: 0 auto var(--space-12); color: var(--c-text-2); font-size: var(--text-xl); }
+    .ticket { display: inline-flex; filter: drop-shadow(0 18px 24px var(--c-ink-shadow)); max-width: 100%; }
+    .ticket__main, .ticket__stub {
+      background: var(--c-accent); color: var(--c-accent-fg);
+      display: flex; flex-direction: column; justify-content: center; text-align: left;
+      min-height: 96px;
+    }
+    .ticket__main {
+      padding: var(--space-5) var(--space-8); border-radius: 14px 0 0 14px;
+      -webkit-mask: radial-gradient(circle at 100% 0, transparent 12px, #000 12.5px) top / 100% 51% no-repeat,
+                    radial-gradient(circle at 100% 100%, transparent 12px, #000 12.5px) bottom / 100% 51% no-repeat;
+              mask: radial-gradient(circle at 100% 0, transparent 12px, #000 12.5px) top / 100% 51% no-repeat,
+                    radial-gradient(circle at 100% 100%, transparent 12px, #000 12.5px) bottom / 100% 51% no-repeat;
+    }
+    .ticket__main small { font-size: var(--text-sm); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.85; }
+    .ticket__main span { font-family: var(--font-display); font-weight: 900; font-stretch: 125%; text-transform: uppercase; font-size: clamp(1.25rem, 4vw, 1.75rem); line-height: 1.1; }
+    .ticket__stub {
+      padding: var(--space-4) var(--space-6); border-radius: 0 14px 14px 0; border-left: 3px dashed var(--c-accent-fg);
+      background: var(--c-accent-2); align-items: center; text-align: center;
+      font-family: var(--font-display); font-weight: 900; font-stretch: 125%; text-transform: uppercase; font-size: var(--text-base); line-height: 1.1;
+      transform-origin: 0 100%; transition: transform 600ms var(--ease-elastic);
+      -webkit-mask: radial-gradient(circle at 0 0, transparent 12px, #000 12.5px) top / 100% 51% no-repeat,
+                    radial-gradient(circle at 0 100%, transparent 12px, #000 12.5px) bottom / 100% 51% no-repeat;
+              mask: radial-gradient(circle at 0 0, transparent 12px, #000 12.5px) top / 100% 51% no-repeat,
+                    radial-gradient(circle at 0 100%, transparent 12px, #000 12.5px) bottom / 100% 51% no-repeat;
+    }
+    .ticket:hover .ticket__stub, .ticket:focus-visible .ticket__stub { transform: translate(10px, 6px) rotate(9deg); }
+    .ticket:active .ticket__main { transform: scale(0.98); }
+    .ticket__main { transition: transform 200ms var(--ease-out); }
+
+    /* === 9. FOOTER === */
+    footer { border-top: 2px solid var(--c-text); padding-block: var(--space-8); font-size: var(--text-base); color: var(--c-text-3); }
+    footer .wrap { display: flex; flex-wrap: wrap; gap: var(--space-4); justify-content: space-between; }
+    footer a { color: var(--c-text); font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+    footer a:hover { color: var(--c-accent); }
+
+    /* === 10. ANIMATIONS === */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 600ms var(--ease-out), transform 600ms var(--ease-elastic); }
+    .reveal.is-visible { opacity: 1; transform: none; }
+
+    /* === 11. RESPONSIVE === */
+    @media (min-width: 768px) {
+      .deck { grid-template-columns: repeat(4, 1fr); gap: var(--space-6); }
+      .bio { grid-template-columns: 1fr 2fr; padding: var(--space-12); }
+      .bio__head { flex-direction: column; align-items: flex-start; }
+      .bio__head img { width: 160px; height: 160px; }
+    }
+    @media (min-width: 1024px) {
+      .hero__grid { grid-template-columns: 1fr auto 1fr; gap: var(--space-10); text-align: left; align-items: center; justify-items: stretch; }
+      .hero h1 { font-size: clamp(2.6rem, 4.6vw, 4.75rem); }
+      .hero__copy:last-child, .hero__card { order: 0; }
+      .show__tabs { flex-wrap: nowrap; }
+      .hero__grid > .hero__copy:last-child { padding-top: var(--space-20); }
+      .chips { justify-content: flex-start; }
+      .hero__lede { margin-inline: 0; }
+    }
+    @media (max-width: 479px) { .brand span { display: none; } .ticket__stub { padding-inline: var(--space-4); } }
+
+    /* === 12. REDUCED MOTION === */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: 0.01ms !important; animation: none !important; }
+      .deck li { --dx: 0px !important; --dy: 0px !important; }
+      .reveal { opacity: 1; transform: none; }
     }
   </style>
 </head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
 
-<body class="bg-gray-50 font-sans text-gray-900 leading-relaxed">
-  
-  <!-- Header -->
-  <header class="bg-white/90 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto px-6 py-4">
-      <div class="flex items-center justify-between">
-        <a href="index.html" class="flex items-center space-x-3">
-          <img src="media/gameframelogo.png" alt="GameFrame Logo" class="h-8 w-auto" loading="eager" fetchpriority="high">
-          <span class="font-bold text-xl text-gray-900">GameFrame</span>
-        </a>
-        
-        <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
-          <a href="#how-it-works" class="text-gray-600 hover:text-primary-600">How It Works</a>
-          <a href="#samples" class="text-gray-600 hover:text-primary-600">Portfolio</a>
-          <a href="#pricing" class="text-gray-600 hover:text-primary-600">Pricing</a>
-          <a href="#faq" class="text-gray-600 hover:text-primary-600">FAQ</a>
-        </nav>
-        
-        <!-- Desktop CTA -->
-        <a href="#order" class="hidden md:inline-flex bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-lg font-medium hover-lift">
-          Order Now
-        </a>
-        
-        <!-- Mobile menu button -->
-        <button id="mobile-menu-button" class="md:hidden flex items-center justify-center w-8 h-8 text-gray-600 hover:text-gray-900">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        </button>
-      </div>
-      
-      <!-- Mobile Navigation -->
-      <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
-        <div class="px-6 py-4 space-y-3">
-          <a href="#how-it-works" class="block text-gray-600 hover:text-primary-600 transition-colors">How It Works</a>
-          <a href="#samples" class="block text-gray-600 hover:text-primary-600 transition-colors">Portfolio</a>
-          <a href="#pricing" class="block text-gray-600 hover:text-primary-600 transition-colors">Pricing</a>
-          <a href="#faq" class="block text-gray-600 hover:text-primary-600 transition-colors">FAQ</a>
-          <a href="#order" class="block bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors text-center">Order Now</a>
-        </div>
-      </div>
+  <nav aria-label="Main">
+    <div class="wrap">
+      <a href="#top" class="brand display"><img src="media/web/gameframelogo.png" alt="" width="44" height="44"><span>GameFrame</span></a>
+      <a class="pill" href="https://m.me/AlexJStaples" target="_blank" rel="noopener">Message me</a>
     </div>
-  </header>
+  </nav>
 
-  <!-- Hero Section -->
-  <section class="pt-12 pb-16">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="grid lg:grid-cols-2 gap-10 items-center">
-        
-        <!-- Left: Content -->
-        <div class="space-y-6">
-          <h1 class="text-4xl lg:text-5xl font-black leading-tight">
-            Turn game day photos into 
-            <span class="gradient-text">pro sports graphics</span>
-          </h1>
-          
-          <p class="text-lg text-gray-600 leading-relaxed max-w-lg">
-            Transform your athlete's photos into professional-quality sports cards, graphics, or illuminated LED signs in just 3-5 days. Perfect for sharing, printing, and celebrating achievements.
-          </p>
-          
-          <div class="flex flex-col sm:flex-row gap-3">
-            <a href="#order" class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-xl font-semibold hover-lift inline-flex items-center justify-center">
-              Get Started — $35-$90
-            </a>
-            <a href="#samples" class="border border-gray-300 hover:border-primary-300 text-gray-700 hover:text-primary-700 px-6 py-3 rounded-xl font-semibold hover-lift inline-flex items-center justify-center">
-              View Examples
-            </a>
-          </div>
-          
-          <!-- Trust indicators -->
-          <div class="flex items-center space-x-6 text-sm text-gray-500">
-            <div class="flex items-center space-x-2">
-              <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-              <span>3-5 day turnaround</span>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <span class="tag">Custom sports graphics</span>
+          <h1>Your gameday photo. <span class="accent"><span class="is-on" style="color: var(--c-poster)">Their new favorite thing.</span><span aria-hidden="true">Their new favorite thing.</span></span></h1>
+        </div>
+
+        <div class="hero__card">
+          <div class="show" id="show" aria-roledescription="carousel" aria-label="What I make">
+            <div class="show__stage" id="show-stage" aria-live="polite">
+              <div class="show__flipper">
+                <div class="show__face show__front"><img src="media/web/hero-poster.webp" alt="Framed softball poster of Lillian Staples mid-swing in a purple Hyde Park uniform"></div>
+                <div class="show__face show__back" aria-hidden="true"><img src="media/web/hero-digital.webp" alt=""></div>
+              </div>
             </div>
-            <div class="flex items-center space-x-2">
-              <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-              <span>100% satisfaction guarantee</span>
+            <div class="show__tabs" role="tablist" aria-label="Products">
+              <button class="show__tab" role="tab" aria-selected="true" aria-controls="show-stage"
+                data-color="var(--c-poster)" data-src="media/web/hero-poster.webp" data-alt="Framed softball poster of Lillian Staples mid-swing in a purple Hyde Park uniform">Posters</button>
+              <button class="show__tab" role="tab" aria-selected="false" aria-controls="show-stage"
+                data-color="var(--c-digital)" data-src="media/web/hero-digital.webp" data-alt="Digital Hudson Valley Heroes graphic of Lillian Staples, number 42, cheering">Digital copies</button>
+              <button class="show__tab" role="tab" aria-selected="false" aria-controls="show-stage"
+                data-color="var(--c-bottle)" data-video="media/web/video-1.mp4" data-poster="media/web/video-1-poster.webp" data-rate="1.75" data-hold="8000" data-alt="Engraved custom water bottle spinning on a turntable">Water bottles</button>
+              <button class="show__tab" role="tab" aria-selected="false" aria-controls="show-stage"
+                data-color="var(--c-led)" data-src="media/web/hero-led.webp" data-alt="LED sign of Lillian Staples glowing on a wall">LED signs</button>
             </div>
           </div>
         </div>
-        
-        <!-- Right: Hero image -->
-        <div class="relative">
-          <div class="aspect-[4/3] bg-gradient-to-br from-primary-100 to-accent-100 rounded-2xl overflow-hidden shadow-2xl">
-            <img src="media/heroimage.png" alt="Professional sports card design example" class="w-full h-full object-cover" />
-          </div>
-          
-          <!-- Floating element -->
-          <div class="absolute -top-4 -right-4 glass rounded-xl p-3 shadow-lg">
-            <div class="text-xl">🏆</div>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </section>
 
-  <!-- How It Works -->
-  <section id="how-it-works" class="py-24 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-      
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-gray-900 mb-4">How It Works</h2>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-          Three simple steps to get your custom sports graphics
-        </p>
+        <div class="hero__copy">
+          <p class="hero__lede">You already took the shot on your phone. Send it to me and I'll turn it into fan gear your kid will actually love.</p>
+          <a class="btn" href="https://m.me/AlexJStaples" target="_blank" rel="noopener">Message me on Messenger</a>        </div>
       </div>
-      
-      <div class="grid md:grid-cols-3 gap-8">
-        
-        <!-- Step 1 -->
-        <div class="text-center space-y-6">
-          <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center mx-auto shadow-lg">
-            <span class="text-2xl font-bold text-white">1</span>
-          </div>
-          <h3 class="text-xl font-semibold text-gray-900">Upload Your Photo</h3>
-          <p class="text-gray-600">
-            Send us your athlete's best game day photo. Phone photos work perfectly fine!
-          </p>
-        </div>
-        
-        <!-- Step 2 -->
-        <div class="text-center space-y-6">
-          <div class="w-16 h-16 bg-gradient-to-br from-accent-500 to-accent-600 rounded-full flex items-center justify-center mx-auto shadow-lg">
-            <span class="text-2xl font-bold text-white">2</span>
-          </div>
-          <h3 class="text-xl font-semibold text-gray-900">We Create Magic</h3>
-          <p class="text-gray-600">
-            Our designer hand-crafts your unique sports graphic with professional quality and attention to detail.
-          </p>
-        </div>
-        
-        <!-- Step 3 -->
-        <div class="text-center space-y-6">
-          <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto shadow-lg">
-            <span class="text-2xl font-bold text-white">3</span>
-          </div>
-          <h3 class="text-xl font-semibold text-gray-900">Receive & Celebrate</h3>
-          <p class="text-gray-600">
-            Get your high-resolution files in 3-5 days. Print, share, and celebrate your athlete's achievements!
-          </p>
-        </div>
-        
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Pricing -->
-  <section id="pricing" class="py-24 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-6">
-      
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-gray-900 mb-4">Simple, Fair Pricing</h2>
-        <p class="text-xl text-gray-600">
-          Choose the option that works best for you
-        </p>
+    <section aria-labelledby="work">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="tag">Recent work</span>
+          <h2 id="work">Fresh off the field.</h2>
+        </div>
+        <ul class="deck" id="deck">
+          <li style="--i:0;--r:-2deg"><img src="media/web/sample38-baseball.webp" alt="Baseball poster" loading="lazy"></li>
+          <li style="--i:1;--r:1.5deg"><img src="media/web/LEDsample-2.webp" alt="LED sign sample" loading="lazy"></li>
+          <li style="--i:2;--r:-1deg"><img src="media/web/sample22-football.webp" alt="Football poster" loading="lazy"></li>
+          <li style="--i:3;--r:2deg"><img src="media/web/sample27-baseball.webp" alt="Baseball poster" loading="lazy"></li>
+          <li style="--i:4;--r:1deg"><img src="media/web/use1.webp" alt="Football poster hanging on a bedroom wall" loading="lazy"></li>
+          <li style="--i:5;--r:-2deg"><img src="media/web/sample31-basketball.webp" alt="Basketball poster" loading="lazy"></li>
+          <li style="--i:6;--r:1.5deg"><img src="media/web/waterbottle-1.webp" alt="Navy water bottle engraved with a youth baseball player wearing number 10" loading="lazy"></li>
+          <li style="--i:7;--r:-1.5deg"><img src="media/web/sample23-baseball.webp" alt="Team poster titled Heroes" loading="lazy"></li>
+        </ul>
       </div>
-      
-      <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
-        
-        <!-- Digital -->
-        <div class="bg-white rounded-2xl p-8 hover:shadow-lg transition-shadow flex flex-col">
-          <div class="text-center space-y-4 flex-grow">
-            <h3 class="text-xl font-semibold text-gray-900">Digital Copy</h3>
-            <div class="text-4xl font-bold text-primary-600">$35</div>
-            <p class="text-gray-600">High-resolution digital file</p>
-            
-            <ul class="space-y-3 text-sm text-gray-600">
-              <li class="flex items-center space-x-3">
-                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
-                <span>High-resolution file</span>
-              </li>
-              <li class="flex items-center space-x-3">
-                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
-                <span>Perfect for social media</span>
-              </li>
-              <li class="flex items-center space-x-3">
-                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
-                <span>One revision included</span>
-              </li>
-            </ul>
-          </div>
-          
-          <a href="#order" class="block bg-primary-600 hover:bg-primary-700 text-white py-3 px-4 rounded-lg font-semibold hover-lift mt-6 text-center text-sm">
-            Get Started
-          </a>
-        </div>
-        
-        <!-- 16x20 Print -->
-        <div class="bg-primary-50 rounded-2xl p-8 ring-2 ring-primary-200 relative hover:shadow-lg transition-shadow flex flex-col">
-          <div class="absolute -top-3 left-1/2 -translate-x-1/2">
-            <span class="bg-accent-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Most Popular</span>
-          </div>
-          
-          <div class="text-center space-y-4 flex-grow">
-            <h3 class="text-xl font-semibold text-gray-900">16×20 Print</h3>
-            <div class="text-4xl font-bold text-primary-600">$60</div>
-            <p class="text-gray-600">Professional poster print plus digital copy</p>
-            
-            <ul class="space-y-3 text-sm text-gray-600">
-              <li class="flex items-center space-x-3">
-                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
-                <span>Everything in Digital</span>
-              </li>
-              <li class="flex items-center space-x-3">
-                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
-                <span>16×20 professional print</span>
-              </li>
-              <li class="flex items-center space-x-3">
-                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
-                <span>Shipped directly to you</span>
-              </li>
-            </ul>
-          </div>
-          
-          <a href="#order" class="block bg-primary-600 hover:bg-primary-700 text-white py-3 px-4 rounded-lg font-semibold hover-lift mt-6 text-center text-sm">
-            Get Started
-          </a>
-        </div>
-        
-        <!-- LED Backlit Signs - NEW! -->
-        <div class="bg-gradient-to-br from-accent-50 to-orange-50 rounded-2xl p-8 ring-2 ring-accent-200 relative hover:shadow-xl transition-shadow flex flex-col">
-          <div class="absolute -top-3 left-1/2 -translate-x-1/2">
-            <span class="bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">NEW!</span>
-          </div>
-          
-          <div class="text-center space-y-4 flex-grow">
-            <h3 class="text-xl font-semibold text-gray-900">LED Backlit Sign</h3>
-            <div class="text-4xl font-bold text-transparent bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text">$90</div>
-            <p class="text-gray-600">Illuminated sign with edge lighting</p>
-            
-            <ul class="space-y-3 text-sm text-gray-600">
-              <li class="flex items-center space-x-3">
-                <svg class="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
-                <span>24" × 16" laser cut</span>
-              </li>
-              <li class="flex items-center space-x-3">
-                <svg class="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
-                <span>50+ lighting modes</span>
-              </li>
-              <li class="flex items-center space-x-3">
-                <svg class="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
-                <span>Remote & app control</span>
-              </li>
-            </ul>
-          </div>
-          
-          <a href="#order" class="block bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white py-3 px-4 rounded-lg font-semibold hover-lift mt-6 text-center text-sm">
-            Get Started
-          </a>
-        </div>
-        
-        <!-- Print Options Card -->
-        <div class="bg-blue-50 rounded-2xl p-8 hover:shadow-lg transition-shadow flex flex-col">
-          <div class="text-center space-y-4 flex-grow">
-            <h3 class="text-xl font-semibold text-gray-900">Print Options</h3>
-            <div class="text-2xl font-bold text-blue-600">Custom</div>
-            <p class="text-gray-600">Print on almost anything</p>
-            
-            <ul class="space-y-2 text-sm text-gray-600">
-              <li class="flex items-center space-x-2">
-                <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
-                <span>Coffee Mugs</span>
-              </li>
-              <li class="flex items-center space-x-2">
-                <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
-                <span>Phone Cases</span>
-              </li>
-              <li class="flex items-center space-x-2">
-                <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
-                <span>Banners</span>
-              </li>
-              <li class="flex items-center space-x-2">
-                <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
-                <span>& Much More!</span>
-              </li>
-            </ul>
-          </div>
-          
-          <a href="https://m.me/AlexJStaples" target="_blank" class="block bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg font-semibold hover-lift mt-6 text-center text-sm">
-            Ask About Options
-          </a>
-        </div>
-        
-        <!-- Team Rates Card -->
-        <div class="bg-purple-50 rounded-2xl p-8 hover:shadow-lg transition-shadow flex flex-col">
-          <div class="text-center space-y-4 flex-grow">
-            <h3 class="text-xl font-semibold text-gray-900">Team Rates</h3>
-            <div class="text-2xl font-bold text-purple-600">Special</div>
-            <p class="text-gray-600">Discounts for team orders</p>
-            
-            <ul class="space-y-3 text-sm text-gray-600">
-              <li class="flex items-center space-x-3">
-                <svg class="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
-                <span>Bulk discounts</span>
-              </li>
-              <li class="flex items-center space-x-3">
-                <svg class="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
-                <span>Team packages</span>
-              </li>
-              <li class="flex items-center space-x-3">
-                <svg class="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
-                <span>Custom packages</span>
-              </li>
-            </ul>
-          </div>
-          
-          <a href="https://m.me/AlexJStaples" target="_blank" class="block bg-purple-600 hover:bg-purple-700 text-white py-3 px-4 rounded-lg font-semibold hover-lift mt-6 text-center text-sm">
-            Message Me
-          </a>
-        </div>
-        
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- NEW: LED Backlit Signs Showcase -->
-  <section class="py-24 bg-gradient-to-br from-slate-900 via-gray-800 to-slate-900 relative overflow-hidden">
-    <!-- Background accent -->
-    <div class="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-red-500/10"></div>
-    <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-orange-500/5 to-transparent"></div>
-    
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-      
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        
-        <!-- Left: Content -->
-        <div class="space-y-8">
+    <section aria-label="About Alex">
+      <div class="wrap">
+        <div class="bio reveal">
+          <div class="bio__head">
+            <img src="media/web/aboutme2.webp" alt="Alex, the creator of GameFrame">
+            <div>
+              <span class="tag">The guy behind it</span>
+              <h2>Hey, I'm Alex.</h2>
+            </div>
+          </div>
           <div>
-            <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <span>🆕 NEW PRODUCT</span>
-            </div>
-            <h2 class="text-5xl font-bold text-white mb-6 leading-tight">
-              LED Backlit 
-              <span class="bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">Signs</span>
-            </h2>
-            <p class="text-xl text-gray-300 leading-relaxed mb-8">
-              Take your athlete's graphics to the next level with our premium LED backlit signs. These aren't just pictures on the wall — they're <strong class="text-white">illuminated masterpieces</strong> that make any space pop.
-            </p>
-          </div>
-          
-          <!-- Product Features -->
-          <div class="grid grid-cols-2 gap-4">
-            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-              <div class="flex items-center space-x-3">
-                <span class="text-2xl">📐</span>
-                <div>
-                  <div class="font-semibold text-white">24" × 16"</div>
-                  <div class="text-sm text-gray-400">Perfect Size</div>
-                </div>
-              </div>
-            </div>
-            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-              <div class="flex items-center space-x-3">
-                <span class="text-2xl">💡</span>
-                <div>
-                  <div class="font-semibold text-white">50+ Settings</div>
-                  <div class="text-sm text-gray-400">Light Modes</div>
-                </div>
-              </div>
-            </div>
-            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-              <div class="flex items-center space-x-3">
-                <span class="text-2xl">📱</span>
-                <div>
-                  <div class="font-semibold text-white">App Control</div>
-                  <div class="text-sm text-gray-400">Remote Included</div>
-                </div>
-              </div>
-            </div>
-            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-              <div class="flex items-center space-x-3">
-                <span class="text-2xl">✨</span>
-                <div>
-                  <div class="font-semibold text-white">Edge Glow</div>
-                  <div class="text-sm text-gray-400">Floating Effect</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- CTA Buttons -->
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a href="#order" class="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-4 rounded-xl font-semibold hover-lift inline-flex items-center justify-center shadow-lg">
-              Order LED Sign — $90
-            </a>
-            <a href="portfolio.html" class="border-2 border-orange-400/50 hover:border-orange-400 text-orange-400 hover:text-orange-300 px-8 py-4 rounded-xl font-semibold hover-lift inline-flex items-center justify-center backdrop-blur-sm">
-              See Portfolio →
-            </a>
+            <p>I was <mark>sick</mark> of paying <mark>top dollar</mark> to fancy photographers for mid quality images that we stuck to the fridge and <mark>never looked at again</mark>. Truth is, we all carry <mark>professional grade camera equipment</mark> with us everyday. Our phones.</p>
+            <p>I started making these cool sports graphics as a hobby. It's fun, creative, and the outcome is actually something that my kid <mark>loves</mark>. So if you want a basic smile picture that you can share with grandma go ahead with the photographer, but if you want something <mark>awesome</mark> that you can turn into anything you want PLUS your kid will love it... get a GameFrame.</p>
           </div>
         </div>
-        
-        <!-- Right: LED Signs Gallery (2x2 Grid) -->
-        <div class="grid grid-cols-2 gap-4">
-          <div class="aspect-[4/5] bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl overflow-hidden shadow-2xl hover:shadow-orange-500/20 transition-shadow duration-300 border border-white/10">
-            <img src="media/LEDsample-1.png" alt="LED Backlit Sports Sign Example 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
-          </div>
-          <div class="aspect-[4/5] bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl overflow-hidden shadow-2xl hover:shadow-orange-500/20 transition-shadow duration-300 border border-white/10">
-            <img src="media/LEDsample-2.png" alt="LED Backlit Sports Sign Example 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
-          </div>
-          <div class="aspect-[4/5] bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl overflow-hidden shadow-2xl hover:shadow-orange-500/20 transition-shadow duration-300 border border-white/10">
-            <img src="media/LEDsample-3.png" alt="LED Backlit Sports Sign Example 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
-          </div>
-          <div class="aspect-[4/5] bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl overflow-hidden shadow-2xl hover:shadow-orange-500/20 transition-shadow duration-300 border border-white/10">
-            <img src="media/LEDsample-4.png" alt="LED Backlit Sports Sign Example 4" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
-          </div>
-        </div>
-        
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Customer Testimonials -->
-  <section class="py-24 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-      
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-gray-900 mb-4">What Parents Are Saying</h2>
-        <p class="text-xl text-gray-600">
-          Real feedback from families just like yours
-        </p>
-      </div>
-      
-      <div class="grid md:grid-cols-3 gap-8">
-        
-        <!-- Testimonial 1 -->
-        <div class="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-shadow">
-          <div class="flex items-center space-x-3 mb-4">
-            <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center">
-              <span class="text-white font-semibold text-sm">MK</span>
-            </div>
-            <div>
-              <div class="font-semibold text-gray-900">Michelle K.</div>
-              <div class="flex items-center space-x-1">
-                <div class="flex space-x-1">
-                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                  </svg>
-                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                  </svg>
-                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                  </svg>
-                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                  </svg>
-                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="bg-primary-600 text-white rounded-2xl rounded-bl-sm p-4 relative">
-            <p class="text-sm leading-relaxed">
-              "Amazing quality and my son absolutely loves his baseball poster!"
-            </p>
-            <div class="absolute -bottom-2 left-4 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-primary-600"></div>
-          </div>
-          
-          <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
-            <span>Baseball mom • 2 days ago</span>
-            <div class="flex items-center space-x-1">
-              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-              </svg>
-              <span>Messenger</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 2 -->
-        <div class="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-shadow">
-          <div class="flex items-center space-x-3 mb-4">
-            <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center">
-              <span class="text-white font-semibold text-sm">RJ</span>
-            </div>
-            <div>
-              <div class="font-semibold text-gray-900">Sarah T.</div>
-              <div class="flex items-center space-x-1">
-                <div class="flex space-x-1">
-                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                  </svg>
-                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                  </svg>
-                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                  </svg>
-                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                  </svg>
-                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="bg-primary-600 text-white rounded-2xl rounded-bl-sm p-4 relative">
-            <p class="text-sm leading-relaxed">
-              "Got my daughter's softball graphics in 4 days and it looks magazine-quality. Alex was super responsive!"
-            </p>
-            <div class="absolute -bottom-2 left-4 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-primary-600"></div>
-          </div>
-          
-          <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
-            <span>Softball mom • 1 week ago</span>
-            <div class="flex items-center space-x-1">
-              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-              </svg>
-              <span>Messenger</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 3 -->
-        <div class="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-shadow">
-          <div class="flex items-center space-x-3 mb-4">
-            <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center">
-              <span class="text-white font-semibold text-sm">LM</span>
-            </div>
-            <div>
-              <div class="font-semibold text-gray-900">Lisa M.</div>
-              <div class="flex items-center space-x-1">
-                <div class="flex space-x-1">
-                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                  </svg>
-                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                  </svg>
-                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                  </svg>
-                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                  </svg>
-                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="bg-primary-600 text-white rounded-2xl rounded-bl-sm p-4 relative">
-            <p class="text-sm leading-relaxed">
-              "The basketball poster design is stunning and my son has it proudly displayed. Much better than expensive team photo packages!"
-            </p>
-            <div class="absolute -bottom-2 left-4 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-primary-600"></div>
-          </div>
-          
-          <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
-            <span>Basketball mom • 2 weeks ago</span>
-            <div class="flex items-center space-x-1">
-              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-              </svg>
-              <span>Messenger</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Recent Work Samples -->
-  <section id="samples" class="py-24 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-6">
-      
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-gray-900 mb-4">Recent Work</h2>
-        <p class="text-xl text-gray-600">
-          See what we've created for athletes just like yours
-        </p>
-      </div>
-      
-      <!-- Sample gallery -->
-      <div id="recent-samples" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-        <!-- Recent samples will be automatically loaded by JavaScript -->
-      </div>
-      
-      <div class="text-center">
-        <a href="portfolio.html" class="border border-primary-300 hover:border-primary-500 text-primary-700 hover:text-primary-800 px-6 py-3 rounded-lg font-semibold hover-lift inline-flex items-center space-x-2">
-          <span>View Full Portfolio</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-          </svg>
+    <section class="final" aria-labelledby="cta">
+      <div class="wrap reveal">
+        <span class="tag">Got a photo?</span>
+        <h2 id="cta">Let's make it something.</h2>
+        <p>Message me with a photo or a question. I'll get back to you with ideas and pricing.</p>
+        <a class="ticket" href="https://m.me/AlexJStaples" target="_blank" rel="noopener">
+          <span class="ticket__main"><small>Admit one: your project</small><span>Message me on Messenger</span></span>
+          <span class="ticket__stub" aria-hidden="true">Tear<br>here</span>
         </a>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Order Form -->
-  <section id="order" class="py-24 bg-gray-50">
-    <div class="max-w-2xl mx-auto px-6">
-      
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-gray-900 mb-4">Ready to Get Started?</h2>
-        <p class="text-xl text-gray-600">
-          Fill out the form below and we'll create your custom sports graphic
-        </p>
-      </div>
-      
-      <!-- Embedded order form -->
-      <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-        <iframe data-tally-src="https://tally.so/embed/KYz0rD?hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="1460" frameborder="0" marginheight="0" marginwidth="0" title="Order Your Custom Design"></iframe>
-        <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
-      </div>
-    </div>
-  </section>
-
-  <!-- Meet Alex - Founder Story -->
-  <section class="py-24 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="grid lg:grid-cols-5 gap-12 items-center">
-        
-        <!-- Left: Image -->
-        <div class="lg:col-span-1 flex justify-center lg:justify-start">
-          <div class="relative">
-            <div class="aspect-square w-40 bg-gradient-to-br from-primary-100 to-accent-100 rounded-full overflow-hidden shadow-xl">
-              <img src="media/aboutme2.png" alt="Alex - GameFrame Creator" class="w-full h-full object-cover" />
-            </div>
-          </div>
-        </div>
-        
-        <!-- Right: Quote -->
-        <div class="lg:col-span-4 text-center lg:text-left">
-          <div class="relative">
-            <div class="absolute -top-4 -left-4 text-6xl text-primary-200 font-serif leading-none">"</div>
-            <blockquote class="text-lg lg:text-xl font-light text-gray-700 leading-relaxed relative z-10 pl-8 pr-8">
-              Hey, I'm Alex. I was <strong class="text-primary-600">sick</strong> of paying <strong class="text-primary-600">top dollar</strong> to fancy photographers for mid quality images that we stuck to the fridge and <strong class="text-primary-600">never looked at again</strong>. Truth is, we all carry <strong class="text-primary-600">professional grade camera equipment</strong> with us everyday. Our phones. I started making these cool cards as a hobby. It's <strong class="text-primary-600">fun</strong>, <strong class="text-primary-600">creative</strong>, and the outcome is actually something that my kid <strong class="text-primary-600">loves</strong>. So if you want a basic smile picture that you can share with grandma go ahead with the photographer, but if you want something <strong class="text-primary-600">awesome</strong> that you can <strong class="text-primary-600">turn into anything you want</strong> PLUS your kid will <strong class="text-primary-600">love it</strong>... get a <strong class="text-primary-600">GameFrame</strong>
-            </blockquote>
-            <div class="absolute -bottom-8 -right-2 text-6xl text-primary-200 font-serif leading-none">"</div>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="py-24 bg-white">
-    <div class="max-w-4xl mx-auto px-6">
-      
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-        <p class="text-xl text-gray-600">
-          Everything you need to know about our service
-        </p>
-      </div>
-      
-      <div class="space-y-6">
-        
-        <details class="group bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors">
-          <summary class="flex items-center justify-between cursor-pointer text-lg font-semibold text-gray-900">
-            What kind of photos work best?
-            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </summary>
-          <p class="mt-4 text-gray-600 leading-relaxed">
-            High-quality, well-lit photos where the athlete is clearly visible work best. Phone photos are perfectly fine! Action shots or posed photos both work great - just avoid heavily blurred or very dark images.
-          </p>
-        </details>
-        
-        <details class="group bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors">
-          <summary class="flex items-center justify-between cursor-pointer text-lg font-semibold text-gray-900">
-            How long does it take?
-            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </summary>
-          <p class="mt-4 text-gray-600 leading-relaxed">
-            Most designs are completed within 3-5 business days. You'll receive your high-resolution digital files first, and physical prints ship the same day as approval.
-          </p>
-        </details>
-        
-        <details class="group bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors">
-          <summary class="flex items-center justify-between cursor-pointer text-lg font-semibold text-gray-900">
-            Can I request changes?
-            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </summary>
-          <p class="mt-4 text-gray-600 leading-relaxed">
-            Absolutely! One round of revisions is included with every order. We'll work with you to make sure you love your sports card design.
-          </p>
-        </details>
-        
-        <details class="group bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors">
-          <summary class="flex items-center justify-between cursor-pointer text-lg font-semibold text-gray-900">
-            What are LED backlit signs?
-            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </summary>
-          <p class="mt-4 text-gray-600 leading-relaxed">
-            Our premium LED signs are laser cut from lightweight composite material and feature built-in LED lighting around the edges. The sign stands 1 inch off the wall, allowing light to flow around the design. Includes 50+ lighting settings and can be controlled via remote or smartphone app. Measures approximately 24" tall by 16" wide.
-          </p>
-        </details>
-        
-        <details class="group bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors">
-          <summary class="flex items-center justify-between cursor-pointer text-lg font-semibold text-gray-900">
-            What sports do you cover?
-            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </summary>
-          <p class="mt-4 text-gray-600 leading-relaxed">
-            All sports! Baseball, basketball, football, soccer, hockey, tennis, wrestling, gymnastics, and more. Each design is customized for the specific sport and team colors.
-          </p>
-        </details>
-        
-        <details class="group bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors">
-          <summary class="flex items-center justify-between cursor-pointer text-lg font-semibold text-gray-900">
-            What if I'm not satisfied?
-            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </summary>
-          <p class="mt-4 text-gray-600 leading-relaxed">
-            Your satisfaction is 100% guaranteed. We'll work with you until you love your design, or provide a full refund if we can't meet your expectations.
-          </p>
-        </details>
-        
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-16">
-    <div class="max-w-6xl mx-auto px-6">
-      
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        
-        <!-- Left: Branding -->
-        <div class="space-y-6">
-          <div class="flex items-center space-x-3">
-            <img src="media/gameframelogo.png" alt="GameFrame Logo" class="h-8 w-auto">
-            <span class="font-bold text-xl">GameFrame</span>
-          </div>
-          
-          <p class="text-gray-400 max-w-md">
-            Transforming game day photos into professional sports graphics that athletes and families treasure forever.
-          </p>
-          
-          <!-- Instagram Call to Action -->
-          <div class="bg-gray-800 border border-gray-600 rounded-lg p-4">
-            <div class="flex items-center space-x-3 mb-2">
-              <svg class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.40s-.644-1.44-1.439-1.40z"/>
-              </svg>
-              <span class="text-gray-200 font-medium">Follow @gameframedesigns</span>
-            </div>
-            <p class="text-gray-400 text-sm">See our latest work and behind-the-scenes content</p>
-            <a href="https://instagram.com/gameframedesigns" target="_blank" class="inline-block mt-3 bg-gray-700 text-gray-200 px-4 py-2 rounded-md font-medium text-sm hover:bg-gray-600 transition-colors">
-              Follow Now →
-            </a>
-          </div>
-          
-          <div class="flex space-x-4">
-            <a href="https://www.instagram.com/gameframedesigns/" target="_blank" class="text-gray-400 hover:text-white transition-colors">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.40s-.644-1.44-1.439-1.40z"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Right: Contact -->
-        <div class="space-y-6">
-          <h3 class="text-lg font-semibold">Get in Touch</h3>
-          
-          <div class="space-y-4">
-            <a href="https://m.me/AlexJStaples" target="_blank" class="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0C5.374 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.626 0 12-4.974 12-11.111C24 4.974 18.626 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.26L19.732 8l-6.541 6.963z"/>
-              </svg>
-              <span>Message us directly</span>
-            </a>
-          </div>
-          
-          <div class="text-sm text-gray-500">
-            © 2025 GameFrame. All rights reserved.
-          </div>
-        </div>
-        
-      </div>
+  <footer>
+    <div class="wrap">
+      <span>© 2026 GameFrame</span>
+      <a href="https://m.me/AlexJStaples" target="_blank" rel="noopener">m.me/AlexJStaples</a>
     </div>
   </footer>
 
-  <!-- Sticky Facebook Messenger Button -->
-  <div id="messenger-container" class="fixed bottom-6 right-6 z-50 transition-all duration-300 cursor-move" style="touch-action: none;">
-    <a href="https://m.me/AlexJStaples" target="_blank" id="messenger-button" class="group flex items-center justify-center w-14 h-14 bg-blue-600 hover:bg-blue-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110" aria-label="Message us on Facebook">
-      <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 0C5.374 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.626 0 12-4.974 12-11.111C24 4.974 18.626 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.26L19.732 8l-6.541 6.963z"/>
-      </svg>
-      
-      <!-- Tooltip -->
-      <div class="absolute right-full mr-3 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-        <div class="bg-slate-800 text-white text-sm px-3 py-2 rounded-lg whitespace-nowrap shadow-lg">
-          Message me directly!
-          <div class="absolute left-full top-1/2 -translate-y-1/2 w-0 h-0 border-l-4 border-l-slate-800 border-y-4 border-y-transparent"></div>
-        </div>
-      </div>
-    </a>
-  </div>
-
-  <!-- Messenger Drag Script -->
   <script>
-    (function() {
-      const container = document.getElementById('messenger-container');
-      const button = document.getElementById('messenger-button');
-      let isDragging = false;
-      let hasDragged = false;
-      let dragStartY = 0;
-      let containerStartY = 0;
-      let startTime = 0;
-      
-      function getInitialPosition() {
-        const rect = container.getBoundingClientRect();
-        return {
-          x: window.innerWidth - rect.width - 24,
-          y: window.innerHeight - rect.height - 24
-        };
-      }
-      
-      function setPosition(x, y) {
-        const rect = container.getBoundingClientRect();
-        const maxX = window.innerWidth - rect.width - 12;
-        const maxY = window.innerHeight - rect.height - 12;
-        
-        x = Math.max(12, Math.min(x, maxX));
-        y = Math.max(12, Math.min(y, maxY));
-        
-        container.style.left = x + 'px';
-        container.style.top = y + 'px';
-        container.style.right = 'auto';
-        container.style.bottom = 'auto';
-      }
-      
-      function handleStart(e) {
-        isDragging = true;
-        hasDragged = false;
-        startTime = Date.now();
-        
-        const clientY = e.type.includes('touch') ? e.touches[0].clientY : e.clientY;
-        dragStartY = clientY;
-        containerStartY = container.getBoundingClientRect().top;
-        
-        container.style.transition = 'none';
-        e.preventDefault();
-      }
-      
-      function handleMove(e) {
-        if (!isDragging) return;
-        
-        const clientY = e.type.includes('touch') ? e.touches[0].clientY : e.clientY;
-        const deltaY = clientY - dragStartY;
-        
-        if (Math.abs(deltaY) > 5) {
-          hasDragged = true;
-        }
-        
-        const newY = containerStartY + deltaY;
-        const currentX = container.getBoundingClientRect().left;
-        
-        setPosition(currentX, newY);
-        e.preventDefault();
-      }
-      
-      function handleEnd(e) {
-        if (!isDragging) return;
-        isDragging = false;
-        
-        container.style.transition = 'all 0.3s ease';
-        
-        // Prevent click if dragged
-        if (hasDragged && Date.now() - startTime > 150) {
-          e.preventDefault();
-          e.stopPropagation();
-          
-          // Snap to nearest edge
-          const rect = container.getBoundingClientRect();
-          const centerX = rect.left + rect.width / 2;
-          const isLeftSide = centerX < window.innerWidth / 2;
-          
-          if (isLeftSide) {
-            setPosition(12, rect.top);
-          } else {
-            setPosition(window.innerWidth - rect.width - 12, rect.top);
-          }
-        }
-      }
-      
-      // Mouse events
-      container.addEventListener('mousedown', handleStart);
-      document.addEventListener('mousemove', handleMove);
-      document.addEventListener('mouseup', handleEnd);
-      
-      // Touch events
-      container.addEventListener('touchstart', handleStart, { passive: false });
-      document.addEventListener('touchmove', handleMove, { passive: false });
-      document.addEventListener('touchend', handleEnd);
-      
-      // Prevent accidental navigation on drag
-      button.addEventListener('click', function(e) {
-        if (hasDragged) {
-          e.preventDefault();
-          e.stopPropagation();
-          return false;
-        }
-      });
-      
-      // Handle window resize
-      window.addEventListener('resize', function() {
-        const rect = container.getBoundingClientRect();
-        setPosition(rect.left, rect.top);
-      });
-    })();
-    
-    // Load recent samples dynamically
-    (function() {
-      // Auto-detect sport from filename to exclude team photos
-      function getSportFromFilename(filename) {
-        const validSports = ['baseball', 'basketball', 'football', 'hockey', 'softball'];
-        
-        // Check for LED signs first (e.g., "led-sample1-baseball.png", "LEDsample-1.png")
-        if (filename.toLowerCase().includes('led-') || filename.toLowerCase().includes('ledsample-')) {
-          return 'led-signs';
-        }
-        
-        // Check for team photos first (e.g., "team-warriors-01.png")
-        if (filename.toLowerCase().includes('team-')) {
-          return 'team-photos';
-        }
-        
-        // Check if filename contains sport name (e.g., "sample1-baseball.png")
-        for (const sport of validSports) {
-          if (filename.toLowerCase().includes(`-${sport}`)) {
-            return sport;
-          }
-        }
-        
-        // Fallback to 'other' if no sport detected
-        return 'other';
-      }
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('is-scrolled', window.scrollY > 40);
+    }, { passive: true });
 
-      // Same image library as portfolio page (add newest images at the top)
-      const portfolioImages = [
-        'sample50-softball.png',
-        'sample49-baseball.png',
-        'sample48-softball.png',
-        'sample47-softball.png',
-        'sample46-softball.png',
-        'sample45-softball.png',
-        'sample44-softball.png',
-        'sample43-softball.png',
-        'sample42-softball.png',
-        'sample41-baseball.png',
-        'sample40-football.png',
-        'sample39-softball.png',
-        'sample38-baseball.png',
-        'sample37-baseball.png',
-        'sample36.png',
-        'sample35-softball.png', 
-        'sample34-softball.png',
-        'sample33-softball.png',
-        'sample32-softball.png',
-        'sample31-basketball.png',
-        'sample30-baseball.png',
-        'sample29-baseball.png',
-        'sample28-baseball.png',
-        'sample27-baseball.png',
-        'sample26-baseball.png',
-        'sample25-baseball.png',
-        'sample24-baseball.png',
-        'sample23-baseball.png',
-        'sample22-football.png',
-        'sample21-baseball.png',
-        'sample20-baseball.png',
-        'sample19-baseball.png',
-        'sample18-baseball.png',
-        'sample17-baseball.png',
-        'sample16-baseball.png',
-        'sample15-softball.png',
-        'sample14-baseball.png',
-        'sample13-baseball.png',
-        'sample12-baseball.png',
-        'sample11-baseball.png',
-        'sample10-baseball.png',
-        'sample9-football.png',
-        'sample8-baseball.png',
-        'sample7-baseball.png',
-        'sample6-baseball.png',
-        'sample5-football.png',
-        'sample4-baseball.png',
-        'sample3-baseball.png',
-        'sample2-softball.png',
-        'sample1-baseball.png',
-        // Team Photos
-        'team-Hudson Valley VooDoo Dolls-01.png',
-        'team-Hudson Valley VooDoo Dolls-02.png',
-        'team-Hudson Valley VooDoo Dolls-03.png',
-        'team-Hudson Valley VooDoo Dolls-04.png',
-        'team-Hudson Valley VooDoo Dolls-05.png',
-        'team-Hudson Valley VooDoo Dolls-06.png',
-        'team-Hudson Valley VooDoo Dolls-07.png',
-        'team-Hudson Valley VooDoo Dolls-08.png',
-        'team-Hudson Valley VooDoo Dolls-09.png',
-        'team-Hudson Valley VooDoo Dolls-10.png',
-        'team-Hudson Valley VooDoo Dolls-11.png',
-        // Add your newest images at the top of this list
-      ];
-      
-      function loadRecentSamples() {
-        const container = document.getElementById('recent-samples');
-        if (!container) return;
-        
-        // Take the first 5 non-team images (most recent)
-        const nonTeamImages = portfolioImages.filter(filename => {
-          return getSportFromFilename(filename) !== 'team-photos';
-        });
-        const recentImages = nonTeamImages.slice(0, 6);
-        
-        recentImages.forEach(filename => {
-          const item = document.createElement('div');
-          item.className = 'aspect-[4/5] bg-white overflow-hidden hover:opacity-80 transition-opacity duration-200';
-          
-          item.innerHTML = `
-            <img src="media/${filename}" alt="Recent graphics sample" class="w-full h-full object-cover" />
-          `;
-          
-          container.appendChild(item);
-        });
-      }
-      
-      // Load samples when page loads
-      document.addEventListener('DOMContentLoaded', loadRecentSamples);
-    })();
-    
-    // Mobile menu toggle functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const mobileMenuButton = document.getElementById('mobile-menu-button');
-      const mobileMenu = document.getElementById('mobile-menu');
-      
-      if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', function() {
-          mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-          if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
-            mobileMenu.classList.add('hidden');
-          }
-        });
-        
-        // Close mobile menu when clicking on menu links
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-        mobileMenuLinks.forEach(link => {
-          link.addEventListener('click', function() {
-            mobileMenu.classList.add('hidden');
-          });
-        });
-      }
+    // Product showcase: flips to the next product, pauses while hovered or focused, tabs jump to a product.
+    // The next product is loaded onto whichever face is turned away, then the flipper turns another 180deg.
+    // A tab with data-video shows a looping clip instead of an image; one shared <video> moves between
+    // faces so it only downloads once.
+    const show = document.getElementById('show');
+    const flipper = show.querySelector('.show__flipper');
+    const faces = [show.querySelector('.show__front'), show.querySelector('.show__back')];
+    const tabs = show.querySelectorAll('.show__tab');
+    const hero = document.querySelector('.hero');
+    const accents = [...document.querySelectorAll('.accent > span')];
+    const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const vid = Object.assign(document.createElement('video'), { muted: true, loop: true, playsInline: true, preload: 'auto' });
+    vid.setAttribute('role', 'img');
+    tabs.forEach((t) => {
+      if (t.dataset.video) Object.assign(vid, { src: t.dataset.video, poster: t.dataset.poster || '' });
+      else new Image().src = t.dataset.src;
     });
-  </script>
+    let current = 0;
+    let turns = 0;
+    let timer;
+    const fill = (face, tab) => {
+      const img = face.querySelector('img');
+      if (tab.dataset.video) {
+        img.hidden = true;
+        vid.setAttribute('aria-label', tab.dataset.alt);
+        face.appendChild(vid);
+        vid.currentTime = 0;
+        vid.playbackRate = Number(tab.dataset.rate) || 1;
+        if (!reduceMotion) vid.play().catch(() => {});
+      } else {
+        if (face.contains(vid)) vid.remove();
+        img.hidden = false;
+        img.src = tab.dataset.src;
+        img.alt = tab.dataset.alt;
+      }
+      face.removeAttribute('aria-hidden');
+    };
+    const goTo = (i) => {
+      i = (i + tabs.length) % tabs.length;
+      if (i === current) return;
+      current = i;
+      const hidden = faces[(turns + 1) % 2];
+      const showing = faces[turns % 2];
+      fill(hidden, tabs[i]);
+      showing.setAttribute('aria-hidden', 'true');
+      showing.querySelector('img').alt = '';
+      if (showing.contains(vid)) setTimeout(() => { if (showing.contains(vid)) vid.pause(); }, 900);
+      turns += 1;
+      flipper.style.setProperty('--turn', `${turns * 180}deg`);
+      tabs.forEach((t, n) => t.setAttribute('aria-selected', n === current));
 
+      // Recolor the headline accent: paint the hidden copy, then crossfade to it
+      const color = tabs[i].dataset.color;
+      const offCopy = accents[turns % 2];
+      offCopy.style.color = color;
+      accents.forEach((a) => a.classList.toggle('is-on', a === offCopy));
+      hero.style.setProperty('--hero-accent', color);
+    };
+    // Each product stays up for its data-hold (ms), default 3.5s
+    const play = () => {
+      clearTimeout(timer);
+      if (reduceMotion) return;
+      timer = setTimeout(() => { goTo(current + 1); play(); }, Number(tabs[current].dataset.hold) || 3500);
+    };
+    tabs.forEach((t, n) => t.addEventListener('click', () => { goTo(n); play(); }));
+    show.addEventListener('pointerenter', () => clearTimeout(timer));
+    show.addEventListener('pointerleave', play);
+    show.addEventListener('focusin', () => clearTimeout(timer));
+    show.addEventListener('focusout', play);
+    play();
+
+    // Deck: stack every card on the middle of the deck, then deal them out on scroll
+    const deck = document.getElementById('deck');
+    const stackDeck = () => {
+      if (deck.classList.contains('is-dealt')) return;
+      const box = deck.getBoundingClientRect();
+      deck.querySelectorAll('li').forEach((li) => {
+        const r = li.getBoundingClientRect();
+        li.style.transition = 'none';
+        li.style.setProperty('--dx', `${box.left + box.width / 2 - (r.left + r.width / 2)}px`);
+        li.style.setProperty('--dy', `${box.top + box.height / 2 - (r.top + r.height / 2)}px`);
+      });
+      deck.offsetHeight;
+      deck.querySelectorAll('li').forEach((li) => { li.style.transition = ''; });
+    };
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      window.addEventListener('load', stackDeck);
+      stackDeck();
+    }
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add(entry.target === deck ? 'is-dealt' : 'is-visible');
+        io.unobserve(entry.target);
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.reveal, #deck').forEach((el) => io.observe(el));
+  </script>
 </body>
 </html>
